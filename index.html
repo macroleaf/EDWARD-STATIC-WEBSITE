@@ -1,157 +1,1027 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EDWARD ROJAN THOMAS</title>
-
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Tasty Pep</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Animate on Scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Google Fonts - Coca-Cola inspired -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #000000;
+            --secondary: #ed1c16;
+            --accent: #ffffff;
+            --light: #f5f5f5;
+            --dark: #000000;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            overflow-x: hidden;
+            color: var(--dark);
+            background-color: white;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+        
+        /* Navbar Styles */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.9) !important;
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar.scrolled {
+            background-color: rgba(255, 255, 255, 0.98) !important;
+            padding: 10px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-brand img {
+            height: 40px;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled .navbar-brand img {
+            height: 35px;
+        }
+        
+        .nav-link {
+            color: var(--primary) !important;
+            font-weight: 500;
+            margin: 0 10px;
+            position: relative;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            bottom: 0;
+            left: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .navbar-toggler {
+            border: none;
+            color: var(--primary);
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        
+        /* Hero Video Section */
+        .hero-video {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .hero-video video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+        
+        .hero-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.4);
+            color: white;
+            text-align: center;
+        }
+        
+        .hero-content h1 {
+            font-size: 4.5rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+        }
+        
+        .hero-content p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary);
+            color: white;
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        
+        .btn-primary:hover {
+            background-color: #c8100b;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* About Section */
+        .about-section {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .about-img {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-img img {
+            width: 100%;
+            transition: all 0.5s ease;
+        }
+        
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+        }
+        
+        /* Purpose Section */
+        .purpose-section {
+            padding: 100px 0;
+            background-color: var(--light);
+        }
+        
+        .purpose-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+        
+        .purpose-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .purpose-card h3 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        /* Sustainability Section */
+        .sustainability-section {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .sustainability-item {
+            margin-bottom: 40px;
+        }
+        
+        .sustainability-item h3 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+        
+        .sustainability-item p {
+            margin-bottom: 20px;
+        }
+        
+        .resource-link {
+            color: var(--secondary);
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .resource-link i {
+            margin-left: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .resource-link:hover i {
+            transform: translateX(5px);
+        }
+        
+        /* Gallery Section */
+        .gallery-section {
+            padding: 100px 0;
+            background-color: var(--light);
+        }
+        
+        .gallery-item {
+            position: relative;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            transition: all 0.5s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-overlay h4 {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .gallery-overlay p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+        
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 100px 0;
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .testimonial-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 30px;
+            margin: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .testimonial-text:before {
+            content: '"';
+            font-size: 4rem;
+            position: absolute;
+            top: -20px;
+            left: -15px;
+            opacity: 0.2;
+            font-family: 'Montserrat', serif;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+        
+        .author-info h5 {
+            margin-bottom: 0;
+            font-weight: 600;
+        }
+        
+        .author-info p {
+            font-size: 0.8rem;
+            opacity: 0.8;
+            margin-bottom: 0;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .contact-info {
+            margin-bottom: 30px;
+        }
+        
+        .contact-info i {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-right: 15px;
+        }
+        
+        .contact-info h5 {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .contact-info p {
+            margin-bottom: 0;
+        }
+        
+        /* Map Section */
+        .map-section {
+            height: 400px;
+            overflow: hidden;
+        }
+        
+        .map-section iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 80px 0 0;
+        }
+        
+        .footer-logo img {
+            height: 50px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-about p {
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgb(0, 0, 0);
+            border-radius: 50%;
+            margin-right: 10px;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--secondary);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .footer-links h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .footer-links h4:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--secondary);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+        
+        .footer-bottom {
+            background-color: rgb(0, 0, 0);
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+        
+        .footer-bottom p {
+            margin-bottom: 0;
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-content h1 {
+                font-size: 3.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero-content p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-content .btn {
+                padding: 10px 20px;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .footer-links {
+                margin-bottom: 30px;
+            }
+        }
+    </style>
 </head>
-
 <body>
-
-    
-    <header class="header">
-        <a href="#about" class="logo">EDWARD ROJAN THOMAS</a>
-
-        <nav class="navbar">
-            <a href="#home" class="active">HOME</a>
-            <a href="#about">ABOUT</a>
-            <a href="#services">SERVICES</a>
-           
-        </nav>
-
-        <div class="bx bx-moon" id="darkMode-icon"></div>
-
-        <div class="bx bx-menu" id="menu-icon"></div>
-    </header>
-
-    
-    <section class="home" id="home">
-        <div class="home-content">
-            <h3>Hello, I am</h3>
-            <h1>EDWARD ROJAN THOMAS</h1>
-            <p>
-                I'm a web developer who loves to create beautiful and functional websites
-                for people who want to make a difference in the world.
-            </p>
-            
-
-            <div class="social-media">
-                <a href="https://www.facebook.com/edward.rojan.54"><i class='bx bxl-facebook'></i></a>
-                <a href="#"><i class='bx bxl-twitter'></i></a>
-                <a href="https://www.instagram.com/_eddy.7/"><i class='bx bxl-instagram-alt'></i></a>
-                <a href="#"><i class='bx bxl-linkedin'></i></a>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="https://via.placeholder.com/150x50?text=NEXUS" alt="Tasty Pep">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#purpose">Our Purpose</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sustainability">Sustainability</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
             </div>
-
-            <a href="#about" class="btn" >About Me</a>
         </div>
+    </nav>
 
-        <div class="profession-container">
-            <div class="profession-box">
-                <div class="profession" style="--i:0;">
-                    <i class='bx bx-code-alt'></i>
-                    <h3>Web Developer</h3>
-                </div>
-                <div class="profession" style="--i:1;">
-                    <i class='bx bx-camera'></i>
-                    <h3>Photographer</h3>
-                </div>
-                <div class="profession" style="--i:2;">
-                    <i class='bx bx-palette'></i>
-                    <h3>Web Designer</h3>
-                </div>
-                <div class="profession" style="--i:3;">
-                    <i class='bx bx-video-recording'></i>
-                    <h3>Videographer</h3>
-                </div>
-
-                <div class="circle"></div>
-            </div>
-
-            <div class="overlay"></div>
-        </div>
-
-        <div class="home-img">
-            <img src="images/EDWARD.png" alt="EDWARD ROJAN THOMAS">
-        </div>
-    </section>
-
-    
-    <section class="about" id="about">
-        <div class="about-img">
-            <img src="images/about.png" alt="">
-        </div>
-
-        <div class="about-content">
-            <h2 class="heading">About <span>Me</span></h2>
-            <h3>
-                I’m Edward Rojan Thomas, a tech enthusiast who thrives on coding, video editing, and videography. I
-                 love merging creativity with technology to craft engaging digital experiences. 
-                 My passion lies in pushing creative boundaries and delivering work that 
-                 leaves a lasting impact.
-            </h3>
-            <p>
-                This website is my personal blog where I write about web development
-                topics that interest me and inspire me.
-            </p>
-            
-            
-        </div>
-    </section>
-
-    
-    <section class="services" id="services">
-        <h2 class="heading">My <span>Services</span></h2>
-
-        <div class="services-container">
-            <div class="services-box">
-                <i class='bx bx-code-alt'></i>
-                <h3>Web Development</h3>
-                <p>I specialize in front-end development, using HTML, CSS, and JavaScript to create responsive, 
-                    user-friendly websites. With a focus on clean code and modern design, 
-                    I deliver visually appealing web solutions tailored to your needs</p>
-                
-            </div>
-            <div class="services-box">
-                <i class='bx bxs-paint'></i>
-                <h3>Graphic Design</h3>
-                <p>Specializing in design and photo editing, crafting clean, engaging visuals that capture attention</p>
-                
-            </div>
-            <div class="services-box">
-                <i class='bx bx-video-recording'></i>
-                <h3>Video Editing</h3>
-                <p>Passionate about videography and video editing, I focus on capturing and crafting dynamic visuals that tell a story</p>
-                
+    <!-- Hero Video Section -->
+    <section class="hero-video" id="home">
+        <video autoplay muted loop>
+            <source src="1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-content">
+            <div class="container">
+                <h1 data-aos="fade-down" data-aos-duration="1000">Tasty Pep</h1>
+                <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">Crafting premium beverages with nature's finest ingredients for an unparalleled taste experience.</p>
+                <a href="#about" class="btn btn-primary" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">Explore More</a>
             </div>
         </div>
     </section>
 
-    
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                    <div class="about-img">
+                        <img src="https://images.unsplash.com/photo-1551029506-0807df4e2031?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="About Nexus Beverages">
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+                    <div class="section-title">
+                        <h2>Our Story</h2>
+                    </div>
+                    <p>Founded in 2025, Tasty Pep began with a simple mission: to create drinks that not only quench thirst but also tell a story of quality, craftsmanship, and passion.</p>
+                    <p>Our journey started in a small workshop with just three employees. Today, we're proud to have grown into an internationally recognized brand, while still maintaining our commitment to artisanal production methods and premium ingredients.</p>
+                    <p>Every bottle of Nexus represents our dedication to excellence. We source only the finest natural ingredients from trusted suppliers around the globe, ensuring each sip delivers an unforgettable experience.</p>
+                    <div class="row mt-4">
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-leaf fa-2x me-3" style="color: var(--secondary);"></i>
+                                <div>
+                                    <h5 class="mb-0">Natural Ingredients</h5>
+                                    <small>100% Organic & Natural</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-award fa-2x me-3" style="color: var(--secondary);"></i>
+                                <div>
+                                    <h5 class="mb-0">Award Winning</h5>
+                                    <small>15+ International Awards</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    
-    
+    <!-- Purpose Section -->
+    <section class="purpose-section" id="purpose">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2 data-aos="fade-up">A Purpose-Driven History</h2>
+                <p data-aos="fade-up" data-aos-delay="200">Our commitment to making a difference</p>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="0">
+                    <div class="purpose-card">
+                        <h3>Our Mission</h3>
+                        <p>Nexus Beverages' purpose is to refresh the world and make a difference. We have remained true to that purpose since our founding, creating beverages that bring people together and make moments more special.</p>
+                        <p>Our strategy is centered around people—our consumers and employees—and driving sustainable solutions that build resilience into our business to respond to current and future challenges.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="purpose-card">
+                        <h3>Our Vision</h3>
+                        <p>We build loved brands that bring joy to our consumers' lives with beverage choices for all occasions, tastes and lifestyles. Our growth strategy is grounded in our core values and commitment to social responsibility.</p>
+                        <p>We believe in creating positive change for the planet while delivering exceptional products that meet the evolving needs of our customers.</p>
+                        <a href="#about" class="btn btn-primary mt-3">Learn More About Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sustainability Section -->
+    <section class="sustainability-section" id="sustainability">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Sustainability Goals and Progress</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="sustainability-item">
+                        <h3>Our Sustainability Progress</h3>
+                        <p>We build loved brands that bring joy to our consumers' lives with beverage choices for all occasions, tastes and lifestyles. Our growth strategy is grounded in our core values and commitment to social and environmental responsibility.</p>
+                    </div>
+                    <div class="sustainability-item">
+                        <h3>Sustainability Resource Center</h3>
+                        <p>At Nexus Beverages, our sustainability goals and initiatives are anchored by our purpose — to refresh the world and make a difference — and are core to our growth strategy.</p>
+                        <p>Get an overview of our efforts to help create a more sustainable business and better shared future.</p>
+                        <a href="#" class="resource-link">Explore the Resource Center <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+                    <div class="about-img">
+                        <img src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80" alt="Sustainability">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2 data-aos="fade-up">Our Gallery</h2>
+                <p data-aos="fade-up" data-aos-delay="200">A visual journey through our craftsmanship</p>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1551029506-0807df4e2031?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Gallery Image 1">
+                        <div class="gallery-overlay">
+                            <div>
+                                <h4>Premium Ingredients</h4>
+                                <p>Sourced from nature's finest</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1600271886742-f049cd5b8a3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Gallery Image 2">
+                        <div class="gallery-overlay">
+                            <div>
+                                <h4>Artisanal Process</h4>
+                                <p>Crafted with precision</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Gallery Image 3">
+                        <div class="gallery-overlay">
+                            <div>
+                                <h4>Quality Control</h4>
+                                <p>Every bottle inspected</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Gallery Image 4">
+                        <div class="gallery-overlay">
+                            <div>
+                                <h4>Eco-Friendly</h4>
+                                <p>Sustainable packaging</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1603569283847-aa295f0d016a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Gallery Image 5">
+                        <div class="gallery-overlay">
+                            <div>
+                                <h4>Innovation</h4>
+                                <p>Cutting-edge flavors</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1515125520141-3e3b67bc0a88?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Gallery Image 6">
+                        <div class="gallery-overlay">
+                            <div>
+                                <h4>Team Spirit</h4>
+                                <p>Passionate professionals</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Gallery Image 7">
+                        <div class="gallery-overlay">
+                            <div>
+                                <h4>Global Reach</h4>
+                                <p>Available worldwide</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1603569283847-aa295f0d016a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Gallery Image 8">
+                        <div class="gallery-overlay">
+                            <div>
+                                <h4>Taste Perfection</h4>
+                                <p>Unforgettable experience</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>What People Say</h2>
+                <p>Hear from our satisfied customers</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 mb-4" data-aos="fade-up">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            <p>The best beverage I've ever tasted! The quality is unmatched and the flavors are so rich and authentic. I can't imagine going back to ordinary drinks after experiencing Nexus.</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah Johnson">
+                            <div class="author-info">
+                                <h5>Sarah Johnson</h5>
+                                <p>Food Critic, Taste Magazine</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            <p>As a restaurant owner, finding premium beverages that complement our dishes was challenging until we discovered Nexus. Our customers constantly compliment the pairing.</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Michael Chen">
+                            <div class="author-info">
+                                <h5>Michael Chen</h5>
+                                <p>Owner, Gastronomy Restaurant</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            <p>I've been in the beverage industry for 15 years, and Nexus stands out for their commitment to quality and innovation. Their products consistently exceed expectations.</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emily Rodriguez">
+                            <div class="author-info">
+                                <h5>Emily Rodriguez</h5>
+                                <p>Beverage Distributor</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2 data-aos="fade-up">Contact Us</h2>
+                <p data-aos="fade-up" data-aos-delay="200">We're here to help with any questions</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8" data-aos="fade-up">
+                    <div class="row text-center">
+                        <div class="col-md-4 mb-4 mb-md-0">
+                            <div class="contact-info">
+                                <i class="fas fa-map-marker-alt fa-2x mb-3"></i>
+                                <h5>Our Location</h5>
+                                <p>123 Beverage Avenue<br>San Francisco, CA 94107</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4 mb-md-0">
+                            <div class="contact-info">
+                                <i class="fas fa-phone-alt fa-2x mb-3"></i>
+                                <h5>Call Us</h5>
+                                <p>+1 (555) 123-4567<br>Mon-Fri, 9am-5pm PST</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="contact-info">
+                                <i class="fas fa-envelope fa-2x mb-3"></i>
+                                <h5>Email Us</h5>
+                                <p>info@nexusbeverages.com<br>support@nexusbeverages.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.138053615209!2d-122.41941592422557!3d37.7749299718996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1689877727902!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
-        <div class="footer-text">
-            <p>Copyright &copy; 2023 | All Rights Reserved.</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-5 mb-lg-0" data-aos="fade-up">
+                    <div class="footer-about">
+                        <div class="footer-logo">
+                            <img src="https://via.placeholder.com/150x50?text=NEXUS" alt="Nexus Beverages Logo">
+                        </div>
+                        <p>Tasty Pep is dedicated to crafting premium drinks that elevate everyday moments into extraordinary experiences.</p>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-5 mb-md-0" data-aos="fade-up" data-aos-delay="100">
+                    <div class="footer-links">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><a href="#">Our Company</a></li>
+                            <li><a href="#">Our Purpose</a></li>
+                            <li><a href="#">Sustainability</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Newsroom</a></li>
+                            <li><a href="#">Investors</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-5 mb-md-0" data-aos="fade-up" data-aos-delay="200">
+                    <div class="footer-links">
+                        <h4>Need Help?</h4>
+                        <ul>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">International</a></li>
+                            <li><a href="#">Policies</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="footer-links">
+                        <h4>Privacy</h4>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Cookies Policy</a></li>
+                            <li><a href="#">Notice at Collection</a></li>
+                            <li><a href="#">Do Not Sell My Info</a></li>
+                            <li><a href="#">Cookies Settings</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="footer-iconTop">
-            <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start">
+                        <p>&copy; 2025 Tasty Pep. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <p>
+                            <a href="#" class="text-white">United States</a> | 
+                            <a href="#" class="text-white">English</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
 
-
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script src="js/script.js"></script>
+    <!-- Animate on Scroll -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            easing: 'ease-in-out'
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Video fallback for mobile
+        const heroVideo = document.querySelector('.hero-video video');
+        if (window.innerWidth < 768) {
+            const videoSource = heroVideo.querySelector('source');
+            const imgFallback = document.createElement('img');
+            imgFallback.src = 'https://images.unsplash.com/photo-1551029506-0807df4e2031?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80';
+            imgFallback.alt = 'Nexus Beverages Hero Image';
+            imgFallback.style.width = '100%';
+            imgFallback.style.height = '100%';
+            imgFallback.style.objectFit = 'cover';
+            heroVideo.parentNode.replaceChild(imgFallback, heroVideo);
+        }
+    </script>
 </body>
-
 </html>
