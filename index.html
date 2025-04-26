@@ -1,338 +1,1039 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jyothis Homoeopathic Clinic - Dr. Rojan Thomas</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Animate.css -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-  <style>
-    :root {
-      --primary: #4b8bbe;
-      --secondary: #f8f9fa;
-      --accent: #ff6b6b;
-      --healing-green: #2ecc71;
-    }
-    
-    /* CUSTOM BACKGROUND */
-    body {
-      background: linear-gradient(rgba(255,255,255,0.88), rgba(255,255,255,0.92)), 
-                  url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
-      background-size: cover;
-      font-family: 'Poppins', sans-serif;
-      min-height: 100vh;
-    }
-    
-    /* NAVIGATION */
-    .navbar {
-      background: rgba(255, 255, 255, 0.98) !important;
-      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-    }
-    
-    .navbar-brand {
-      font-weight: 700;
-      color: var(--primary) !important;
-      font-size: 1.3rem;
-    }
-    
-    /* DOCTOR CARD */
-    .doctor-card {
-      background: rgba(255, 255, 255, 0.98);
-      border-radius: 20px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-      overflow: hidden;
-      margin: 2rem auto;
-      border: none;
-      transition: transform 0.4s ease;
-    }
-    
-    .doctor-card:hover {
-      transform: translateY(-5px);
-    }
-    
-    .doctor-header {
-      background: linear-gradient(135deg, var(--primary), #3a6f99);
-      color: white;
-      padding: 2rem;
-      text-align: center;
-      position: relative;
-    }
-    
-    .doctor-img {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      border: 5px solid white;
-      object-fit: cover;
-      margin: -80px auto 1rem;
-      display: block;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-      transition: all 0.4s ease;
-    }
-    
-    .doctor-img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-    }
-    
-    /* FORM STYLING */
-    .form-control {
-      border-radius: 12px;
-      padding: 14px 18px;
-      border: 2px solid #e0e6ed;
-      transition: all 0.3s;
-    }
-    
-    .form-control:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 0.25rem rgba(75, 139, 190, 0.2);
-    }
-    
-    .btn-healing {
-      background: linear-gradient(to right, var(--primary), #3a6f99);
-      border: none;
-      padding: 15px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      border-radius: 12px;
-      transition: all 0.4s;
-      box-shadow: 0 4px 15px rgba(75, 139, 190, 0.3);
-    }
-    
-    .btn-healing:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(75, 139, 190, 0.4);
-    }
-    
-    /* INSTANT SUCCESS MESSAGE */
-    .healing-success {
-      display: none;
-      background: rgba(46, 204, 113, 0.1);
-      border-left: 4px solid var(--healing-green);
-      padding: 2rem;
-      border-radius: 12px;
-      margin-top: 1.5rem;
-      animation: fadeIn 0.6s ease-out;
-    }
-    
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    
-    .healing-icon {
-      font-size: 4rem;
-      color: var(--healing-green);
-      margin-bottom: 1.5rem;
-      animation: pulse 2s infinite;
-    }
-    
-    /* RESPONSIVE ADJUSTMENTS */
-    @media (max-width: 768px) {
-      .doctor-img {
-        width: 110px;
-        height: 110px;
-        margin-top: -65px;
-      }
-      
-      .doctor-header h1 {
-        font-size: 1.6rem;
-      }
-      
-      .form-control {
-        padding: 12px 15px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium Notebook Store - Shop high-quality notebooks, pens, brown paper, and school supplies. Best prices for back-to-school essentials.">
+    <meta name="keywords" content="notebooks, pens, school supplies, stationery, brown paper, back to school">
+    <meta name="author" content="Notebook Store">
+    <meta property="og:title" content="Premium Notebook Store">
+    <meta property="og:description" content="Shop high-quality notebooks, pens, and school supplies">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yournotebookstore.com">
+    <meta property="og:image" content="https://yournotebookstore.com/images/logo.png">
+    <title>Ecliptica Notes</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --highlight-color: #1abc9c;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        .navbar {
+            background-color: var(--secondary-color);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 24px;
+            color: white !important;
+        }
+        
+        .navbar-brand span {
+            color: var(--primary-color);
+        }
+        
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+            margin: 0 10px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .navbar-toggler {
+            border: none;
+            color: white;
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+        }
+        
+        .btn-primary:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.6);
+        }
+        
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--secondary-color);
+            position: relative;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-img {
+            height: 200px;
+            object-fit: contain;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .product-title {
+            font-weight: 600;
+            margin-top: 15px;
+            color: var(--dark-color);
+        }
+        
+        .product-price {
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        
+        .product-code {
+            font-size: 12px;
+            color: #777;
+            margin-top: 5px;
+        }
+        
+        .btn-add-to-cart {
+            background-color: var(--highlight-color);
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        
+        .btn-add-to-cart:hover {
+            background-color: #16a085;
+            transform: translateY(-2px);
+        }
+        
+        .about-section {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .about-img {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transform: rotate(-5deg);
+            transition: all 0.5s ease;
+        }
+        
+        .about-img:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+        
+        .about-content {
+            padding-left: 50px;
+        }
+        
+        .about-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+        
+        .about-text {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        
+        .feature-box {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+            height: 100%;
+        }
+        
+        .feature-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .feature-title {
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+        }
+        
+        .feature-text {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .testimonial-section {
+            background-color: var(--light-color);
+            padding: 100px 0;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin: 15px;
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '\201C';
+            font-family: Georgia, serif;
+            font-size: 60px;
+            color: rgba(52, 152, 219, 0.1);
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .testimonial-rating {
+            color: #f1c40f;
+            margin-bottom: 10px;
+        }
+        
+        .carousel-indicators [data-bs-target] {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin: 0 5px;
+            background-color: rgba(52, 152, 219, 0.5);
+            border: none;
+        }
+        
+        .carousel-indicators .active {
+            background-color: var(--primary-color);
+        }
+        
+        .contact-section {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .contact-info {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            height: 100%;
+        }
+        
+        .contact-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: white;
+        }
+        
+        .contact-item {
+            margin-bottom: 25px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+        
+        .contact-text h5 {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .contact-text p {
+            opacity: 0.8;
+            margin-bottom: 0;
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 30px;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 60px 0 0;
+        }
+        
+        .footer-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .footer-bottom {
+            background-color: rgba(0, 0, 0, 0.1);
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        
+        .copyright {
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        /* Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        @media (max-width: 991.98px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .about-content {
+                padding-left: 0;
+                margin-top: 40px;
+            }
+        }
+        
+        @media (max-width: 767.98px) {
+            .hero-section {
+                padding: 80px 0;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+        
+        /* Custom shape for about section image */
+        .custom-shape {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .custom-shape::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--primary-color);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            z-index: -1;
+            transition: all 0.5s ease;
+        }
+        
+        .about-img:hover .custom-shape::before {
+            border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+            top: -10px;
+            left: -10px;
+        }
+    </style>
 </head>
 <body>
-  <!-- Navigation Bar -->
-  <nav class="navbar navbar-expand-lg navbar-light sticky-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">
-        <i class="fas fa-clinic-medical me-2"></i>Jyothis Homoeopathic
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fas fa-home me-1"></i> Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fas fa-user-md me-1"></i> About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="#"><i class="fas fa-calendar-check me-1"></i> Appointment</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fas fa-phone-alt me-1"></i> Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Main Content -->
-  <div class="container my-4">
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <div class="doctor-card animate__animated animate__fadeInUp">
-          <!-- Doctor Header -->
-          <div class="doctor-header">
-            <h1 class="mb-0">Jyothis Homoeopathic Clinic</h1>
-          </div>
-          
-          <!-- Doctor Image -->
-          <img src="Screenshot 2025-04-25 193651.png" alt="Dr. Rojan Thomas" class="doctor-img animate__animated animate__zoomIn">
-          
-          <div class="p-4 pt-0">
-            <h3 class="text-center mb-2">Dr. Rojan Thomas</h3>
-            <p class="text-center text-muted mb-4">BHMS,</p>
-            
-            <!-- Appointment Form -->
-            <form id="appointmentForm" class="animate__animated animate__fadeIn">
-              <input type="hidden" name="access_key" value="4be661e7-d054-4d72-ab65-43023f48f864">
-              <input type="hidden" name="subject" value="New Appointment Request">
-              
-              <div class="mb-4">
-                <label for="name" class="form-label">Full Name *</label>
-                <input type="text" class="form-control" id="name" name="name" required>
-              </div>
-              
-              <div class="row">
-                <div class="col-md-6 mb-4">
-                  <label for="phone" class="form-label">Phone Number *</label>
-                  <input type="tel" class="form-control" id="phone" name="phone" required>
-                </div>
-                <div class="col-md-6 mb-4">
-                  <label for="age" class="form-label">Age *</label>
-                  <input type="number" class="form-control" id="age" name="age" min="1" max="120" required>
-                </div>
-              </div>
-              
-              <div class="mb-4">
-                <label for="date" class="form-label">Preferred Date *</label>
-                <input type="date" class="form-control" id="date" name="date" required>
-                <small class="text-danger"><i class="fas fa-calendar-times me-1"></i>Closed on Sundays</small>
-              </div>
-              
-              <div class="mb-4">
-                <label for="time" class="form-label">Preferred Time *</label>
-                <select class="form-select" id="time" name="time" required>
-                  <option value="">Select Time Slot</option>
-                  <option value="9:00-10:00 AM">Morning: 9:00-10:00 AM</option>
-                  <option value="11:00-12:00 PM">Late Morning: 11:00-12:00 PM</option>
-                  <option value="2:00-3:00 PM">Afternoon: 2:00-3:00 PM</option>
-                  <option value="4:00-5:00 PM">Evening: 4:00-5:00 PM</option>
-                </select>
-              </div>
-              
-              <div class="mb-4">
-                <label for="symptoms" class="form-label">Symptoms *</label>
-                <textarea class="form-control" id="symptoms" name="symptoms" rows="3" required></textarea>
-              </div>
-              
-              <button type="submit" class="btn btn-healing btn-lg w-100 mt-2">
-                <i class="fas fa-paper-plane me-2"></i> Send Appointment Request
-              </button>
-            </form>
-            
-            <!-- INSTANT SUCCESS MESSAGE -->
-            <div id="healingSuccess" class="healing-success text-center">
-              <div class="healing-icon">
-                <i class="fas fa-check-circle"></i>
-              </div>
-              <h3 class="text-success mb-3">Appointment Request Sent!</h3>
-              <p class="lead">Dr. Rojan Thomas will contact you shortly to confirm your appointment.</p>
-              <div class="alert alert-success mt-4">
-                <i class="fas fa-spa me-2"></i> <strong>Healing Message:</strong> "Your journey to natural healing has begun. We'll help restore your body's balance."
-              </div>
-              <button id="newAppointmentBtn" class="btn btn-outline-primary mt-3">
-                <i class="fas fa-plus-circle me-2"></i> New Appointment
-              </button>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Ecliptica <span></span>Notes</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </div>
+    </nav>
 
-  <!-- Bootstrap JS Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const form = document.getElementById('appointmentForm');
-      const successDiv = document.getElementById('healingSuccess');
-      const newAppointmentBtn = document.getElementById('newAppointmentBtn');
-      const dateField = document.getElementById('date');
-      
-      // Set minimum date to today
-      const today = new Date();
-      dateField.min = today.toISOString().split('T')[0];
-      
-      // Prevent Sunday selection
-      dateField.addEventListener('change', function() {
-        const selectedDate = new Date(this.value);
-        if (selectedDate.getDay() === 0) {
-          alert("Our clinic is closed on Sundays. Please select a weekday for your appointment.");
-          this.value = '';
-        }
-      });
-      
-      // Form submission - INSTANT RESPONSE
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Validate form
-        const requiredFields = form.querySelectorAll('[required]');
-        let isValid = true;
-        
-        requiredFields.forEach(field => {
-          if (!field.value.trim()) {
-            isValid = false;
-            field.classList.add('is-invalid');
-          } else {
-            field.classList.remove('is-invalid');
-          }
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1 class="hero-title animate__animated animate__fadeInDown">Premium School Supplies</h1>
+                        <p class="hero-subtitle animate__animated animate__fadeInDown animate__delay-1s">High-quality notebooks, pens & stationery for your academic success</p>
+                        <a href="#products" class="btn btn-primary btn-lg animate__animated animate__fadeInUp animate__delay-2s">Shop Now <i class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Notebooks and Pens" class="img-fluid animate__animated animate__fadeInRight animate__delay-1s">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-5">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Featured Products</h2>
+            <div class="row">
+                <!-- Product 1 -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="product-card animate-on-scroll" data-delay="0.1s">
+                        <div class="product-badge">Sale</div>
+                        <img src="https://images.unsplash.com/photo-1620191957895-4c043d06d6a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="card-img-top product-img" alt="Premium Notebook">
+                        <div class="card-body text-center">
+                            <h5 class="product-title">Premium Notebook</h5>
+                            <p class="product-price">$12.99</p>
+                            <p class="product-code">PROD-123456</p>
+                            <button class="btn btn-add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="product-card animate-on-scroll" data-delay="0.2s">
+                        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80" class="card-img-top product-img" alt="Gel Pens Set">
+                        <div class="card-body text-center">
+                            <h5 class="product-title">Gel Pens Set (12 Colors)</h5>
+                            <p class="product-price">$8.99</p>
+                            <p class="product-code">PROD-234567</p>
+                            <button class="btn btn-add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="product-card animate-on-scroll" data-delay="0.3s">
+                        <div class="product-badge">New</div>
+                        <img src="https://images.unsplash.com/photo-1518655048521-f130df041f66?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="card-img-top product-img" alt="Brown Paper Notebook">
+                        <div class="card-body text-center">
+                            <h5 class="product-title">Brown Paper Notebook</h5>
+                            <p class="product-price">$9.99</p>
+                            <p class="product-code">PROD-345678</p>
+                            <button class="btn btn-add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="product-card animate-on-scroll" data-delay="0.4s">
+                        <img src="https://images.unsplash.com/photo-1455885661740-29cbf08a42fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" class="card-img-top product-img" alt="Name Slips">
+                        <div class="card-body text-center">
+                            <h5 class="product-title">Name Slips (Pack of 50)</h5>
+                            <p class="product-price">$4.99</p>
+                            <p class="product-code">PROD-456789</p>
+                            <button class="btn btn-add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4 animate-on-scroll">
+                <a href="products.html" class="btn btn-primary btn-lg">Explore All Products <i class="fas fa-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Why Choose Us</h2>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="feature-box animate-on-scroll" data-delay="0.1s">
+                        <div class="feature-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h3 class="feature-title">Premium Quality</h3>
+                        <p class="feature-text">We source only the highest quality materials for our notebooks and stationery products.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="feature-box animate-on-scroll" data-delay="0.2s">
+                        <div class="feature-icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <h3 class="feature-title">Fast Delivery</h3>
+                        <p class="feature-text">Get your school supplies delivered quickly with our reliable shipping partners.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="feature-box animate-on-scroll" data-delay="0.3s">
+                        <div class="feature-icon">
+                            <i class="fas fa-percentage"></i>
+                        </div>
+                        <h3 class="feature-title">Student Discounts</h3>
+                        <p class="feature-text">Special discounts available for students with valid ID cards.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="feature-box animate-on-scroll" data-delay="0.4s">
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3 class="feature-title">24/7 Support</h3>
+                        <p class="feature-text">Our customer service team is always ready to assist you with any questions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carousel Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Our Collections</h2>
+            <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="5000">
+                        <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" class="d-block w-100 rounded" alt="Notebook Collection">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=898&q=80" class="d-block w-100 rounded" alt="Pen Collection">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="d-block w-100 rounded" alt="School Supplies">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="d-block w-100 rounded" alt="Office Supplies">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="d-block w-100 rounded" alt="Back to School">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-img animate-on-scroll">
+                        <div class="custom-shape">
+                            <img src="images/aboutEclipticaNotes.jpg" alt="Our Team" class="img-fluid rounded">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-content animate-on-scroll">
+                        <h2 class="about-title">About Ecliptica Notes</h2>
+                        <p class="about-text"><strong>Ecliptica Notes </strong> was established in Guruvayur in 2025 with a clear focus: to provide incredibly low-cost essential stationery for the upcoming school opening. We offer a curated selection of<strong> 20 essential and important products</strong> perfect for students, including quality pens, versatile A4 sheets, practical brown paper, and more – no unnecessary items, just the essentials – all designed to be budget-friendly. Discover attractive offers and equip yourself or your students for the new academic year without compromising on quality.</p>
+                        <p class="about-text">Please note that this is a static website for the school opening period, showcasing our essential products and attractive offers. To place your order, kindly contact us by calling or <strong>WhatsApping +91 95628 98601.</strong> We will be accepting orders for the school opening essentials until approximately May 30th. Contact us before this date to secure your supplies of low-cost notebooks and our range of 20 essential school items. </p>
+                        <a href="#contact" class="btn btn-primary">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonial-section">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">What Our Customers Say</h2>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="testimonial-card animate-on-scroll" data-delay="0.1s">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">The quality of these notebooks is exceptional! The paper is thick and doesn't bleed through, even with fountain pens. I'll definitely be buying more.</p>
+                        <p class="testimonial-author">- Sarah Johnson, College Student</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="testimonial-card animate-on-scroll" data-delay="0.2s">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">I ordered pens for my entire office and everyone loves them. The delivery was fast and the customer service was excellent.</p>
+                        <p class="testimonial-author">- Michael Chen, Office Manager</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="testimonial-card animate-on-scroll" data-delay="0.3s">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="testimonial-text">As a teacher, I appreciate the quality and variety of school supplies available. The brown paper notebooks are perfect for my art classes.</p>
+                        <p class="testimonial-author">- David Wilson, High School Teacher</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Contact Us</h2>
+            <div class="row">
+                <div class="col-lg-5 mb-4 mb-lg-0">
+                    <div class="contact-info animate-on-scroll">
+                        <h3 class="contact-title">Get In Touch</h3>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h5>Our Location</h5>
+                                <p>Guruvayur 680101</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h5>Call Us</h5>
+                                <p>+91 95628 98601</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h5>Email Us</h5>
+                                <p>nobinnixon63@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h5>Working Hours</h5>
+                                <p>Monday - Friday: 9AM - 6PM</p>
+                                <p>Saturday: 10AM - 4PM</p>
+                            </div>
+                        </div>
+                        
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-7">
+                    <div class="map-container animate-on-scroll">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215373510518!2d-73.98784492423938!3d40.75798597138952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1690834251980!5m2!1sen!2sus" width="100%" height="450" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h3 class="footer-title">Notebook Store</h3>
+                    <p>Providing premium quality school and office supplies since 2010. Your one-stop shop for all stationery needs.</p>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h3 class="footer-title">Products</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Notebooks</a></li>
+                        <li><a href="#">Pens & Pencils</a></li>
+                        <li><a href="#">Brown Paper</a></li>
+                        <li><a href="#">Name Slips</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h3 class="footer-title">Customer Service</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 text-center text-md-start">
+                            <p class="copyright">© 2023 Notebook Store. All Rights Reserved.</p>
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <div class="payment-methods">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Back to Top Button
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 300) {
+                $('.back-to-top').addClass('active');
+            } else {
+                $('.back-to-top').removeClass('active');
+            }
         });
         
-        if (!isValid) {
-          alert('Please fill all required fields');
-          return;
-        }
-        
-        // INSTANTLY show success (no waiting for server response)
-        form.style.display = 'none';
-        successDiv.style.display = 'block';
-        successDiv.scrollIntoView({ behavior: 'smooth' });
-        
-        // Submit data in background (without waiting for response)
-        const formData = new FormData(form);
-        fetch('https://api.web3forms.com/submit', {
-          method: 'POST',
-          body: formData
-        }).catch(error => {
-          console.error('Form submission error:', error);
+        $('.back-to-top').click(function(e) {
+            e.preventDefault();
+            $('html, body').animate({scrollTop: 0}, '300');
         });
         
-        // Reset form after showing success
-        form.reset();
-      });
-      
-      // New Appointment button
-      newAppointmentBtn.addEventListener('click', function() {
-        successDiv.style.display = 'none';
-        form.style.display = 'block';
-        form.scrollIntoView({ behavior: 'smooth' });
-      });
-    });
-  </script>
+        // Animate on Scroll
+        $(document).ready(function() {
+            $(window).scroll(function() {
+                $('.animate-on-scroll').each(function() {
+                    var position = $(this).offset().top;
+                    var scroll = $(window).scrollTop();
+                    var windowHeight = $(window).height();
+                    var delay = $(this).data('delay') || 0;
+                    
+                    if (scroll + windowHeight > position + 100) {
+                        setTimeout(() => {
+                            $(this).addClass('animated');
+                        }, delay * 1000);
+                    }
+                });
+            });
+            
+            // Trigger scroll event on page load
+            $(window).trigger('scroll');
+        });
+        
+        // Smooth scrolling for anchor links
+        $('a[href*="#"]').on('click', function(e) {
+            e.preventDefault();
+            
+            $('html, body').animate(
+                {
+                    scrollTop: $($(this).attr('href')).offset().top - 70,
+                },
+                500,
+                'linear'
+            );
+        });
+        
+        // Navbar scroll effect
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 100) {
+                $('.navbar').addClass('navbar-scrolled');
+            } else {
+                $('.navbar').removeClass('navbar-scrolled');
+            }
+        });
+    </script>
 </body>
 </html>

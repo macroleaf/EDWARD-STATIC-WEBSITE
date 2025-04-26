@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse our premium notebooks, pens, and school supplies. Search by product name or code to find exactly what you need.">
+    <meta name="keywords" content="notebooks, pens, school supplies, stationery, search products">
+    <title>Products | Premium Notebook Store</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --highlight-color: #1abc9c;
+        }
+        
+        body {
+            font-family: 'Rubik', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        .navbar {
+            background-color: var(--secondary-color);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+        }
+        
+        .navbar-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 24px;
+            color: white !important;
+        }
+        
+        .navbar-brand span {
+            color: var(--primary-color);
+        }
+        
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+            margin: 0 10px;
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .search-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 60px 0;
+            margin-bottom: 50px;
+        }
+        
+        .search-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .search-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .search-box {
+            width: 100%;
+            padding: 15px 100px 15px 20px;
+            border-radius: 50px;
+            border: none;
+            font-size: 18px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .search-box:focus {
+            outline: none;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .search-btn {
+            position: absolute;
+            right: 55px;
+            top: 5px;
+            background-color: var(--highlight-color);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .search-btn:hover {
+            background-color: #16a085;
+            transform: scale(1.05);
+        }
+        
+        .refresh-btn {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .refresh-btn:hover {
+            background-color: #c0392b;
+            transform: scale(1.05);
+        }
+        
+        .search-suggestions {
+            position: absolute;
+            width: 100%;
+            background: white;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: none;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .search-suggestions.show {
+            display: block;
+        }
+        
+        .suggestion-item {
+            padding: 10px 20px;
+            cursor: pointer;
+            color: #333;
+            transition: all 0.2s;
+        }
+        
+        .suggestion-item:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .suggestion-highlight {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--secondary-color);
+            position: relative;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+            position: relative;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-img-container {
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f8f9fa;
+            padding: 20px;
+            position: relative;
+        }
+        
+        .product-img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 5px;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        
+        .badge-offer {
+            background: linear-gradient(135deg, #ff5e62, #ff9966);
+            animation: pulse 2s infinite;
+        }
+        
+        .badge-demand {
+            background: linear-gradient(135deg, #11998e, #38ef7d);
+        }
+        
+        .badge-killer {
+            background: linear-gradient(135deg, #7b4397, #dc2430);
+            animation: pulse 1.5s infinite;
+        }
+        
+        .badge-new {
+            background: linear-gradient(135deg, #0575e6, #021b79);
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .product-body {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-title {
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 10px;
+            text-align: center;
+            font-size: 18px;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .product-price {
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 1.3rem;
+            text-align: center;
+            margin: 10px 0;
+        }
+        
+        .product-price span {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+        }
+        
+        .product-code {
+            font-size: 13px;
+            color: #777;
+            text-align: center;
+            margin-bottom: 15px;
+            background: #f5f5f5;
+            padding: 5px;
+            border-radius: 4px;
+        }
+        
+        .product-features {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+            text-align: center;
+        }
+        
+        .product-features li {
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #555;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .product-features i {
+            color: var(--highlight-color);
+            margin-right: 8px;
+            font-size: 12px;
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 50px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .no-results-icon {
+            font-size: 50px;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+        
+        .footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 60px 0 0;
+            margin-top: 50px;
+        }
+        
+        .footer-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .footer-bottom {
+            background-color: rgba(0, 0, 0, 0.1);
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        
+        .copyright {
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        .purchase-section {
+            background-color: var(--light-color);
+            padding: 30px 0;
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .purchase-btn {
+            background: linear-gradient(135deg, var(--highlight-color), #16a085);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(26, 188, 156, 0.4);
+        }
+        
+        .purchase-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(26, 188, 156, 0.6);
+        }
+        
+        .purchase-btn i {
+            margin-right: 10px;
+        }
+        
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+            margin-left: 15px;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.6);
+        }
+        
+        .whatsapp-btn i {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Note<span>Book</span> Store</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="container">
+            <h2 class="search-title text-center">Find Your Perfect Notebook</h2>
+            <div class="search-container">
+                <input type="text" class="search-box" id="searchInput" placeholder="Search by product name or code...">
+                <button class="search-btn" id="searchBtn"><i class="fas fa-search"></i></button>
+                <button class="refresh-btn" id="refreshBtn"><i class="fas fa-sync-alt"></i></button>
+                <div class="search-suggestions" id="searchSuggestions"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title">Our Products</h2>
+            <div class="row" id="productsContainer">
+                <!-- Product 1 -->
+                <div class="col-lg-3 col-md-6 mb-4 product-item" data-code="PROD-123456" data-name="premium notebook" data-tags="notebook premium">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="https://images.unsplash.com/photo-1620191957895-4c043d06d6a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="product-img" alt="Premium Notebook">
+                            <div class="product-badge badge-offer"><i class="fas fa-tag"></i> 20% OFF</div>
+                        </div>
+                        <div class="product-body">
+                            <h5 class="product-title">Premium Notebook</h5>
+                            <p class="product-price"><span>₹</span>12.99 <span class="text-decoration-line-through text-muted small">₹16.99</span></p>
+                            <p class="product-code">PROD-123456</p>
+                            <ul class="product-features">
+                                <li><i class="fas fa-check"></i> 200 Pages</li>
+                                <li><i class="fas fa-check"></i> Hard Cover</li>
+                                <li><i class="fas fa-check"></i> Premium Paper</li>
+                            </ul>
+                            <button class="buy-now-btn"><i class="fas fa-shopping-cart"></i> Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="col-lg-3 col-md-6 mb-4 product-item" data-code="PROD-234567" data-name="gel pens set" data-tags="pens gel colorful">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80" class="product-img" alt="Gel Pens Set">
+                            <div class="product-badge badge-demand"><i class="fas fa-fire"></i> HOT</div>
+                        </div>
+                        <div class="product-body">
+                            <h5 class="product-title">Gel Pens Set (12 Colors)</h5>
+                            <p class="product-price"><span>₹</span>8.99</p>
+                            <p class="product-code">PROD-234567</p>
+                            <ul class="product-features">
+                                <li><i class="fas fa-check"></i> 12 Vibrant Colors</li>
+                                <li><i class="fas fa-check"></i> Smooth Writing</li>
+                                <li><i class="fas fa-check"></i> Comfort Grip</li>
+                            </ul>
+                            <button class="buy-now-btn"><i class="fas fa-shopping-cart"></i> Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="col-lg-3 col-md-6 mb-4 product-item" data-code="PROD-345678" data-name="brown paper notebook" data-tags="notebook brown eco">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="https://images.unsplash.com/photo-1518655048521-f130df041f66?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="product-img" alt="Brown Paper Notebook">
+                            <div class="product-badge badge-new"><i class="fas fa-certificate"></i> NEW</div>
+                        </div>
+                        <div class="product-body">
+                            <h5 class="product-title">Brown Paper Notebook</h5>
+                            <p class="product-price"><span>₹</span>9.99</p>
+                            <p class="product-code">PROD-345678</p>
+                            <ul class="product-features">
+                                <li><i class="fas fa-check"></i> Eco-Friendly</li>
+                                <li><i class="fas fa-check"></i> 150 Pages</li>
+                                <li><i class="fas fa-check"></i> Recycled Paper</li>
+                            </ul>
+                            <button class="buy-now-btn"><i class="fas fa-shopping-cart"></i> Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="col-lg-3 col-md-6 mb-4 product-item" data-code="PROD-456789" data-name="name slips" data-tags="slips labels name">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="https://images.unsplash.com/photo-1455885661740-29cbf08a42fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" class="product-img" alt="Name Slips">
+                            <div class="product-badge badge-killer"><i class="fas fa-bolt"></i> KILLER</div>
+                        </div>
+                        <div class="product-body">
+                            <h5 class="product-title">Name Slips (Pack of 50)</h5>
+                            <p class="product-price"><span>₹</span>4.99</p>
+                            <p class="product-code">PROD-456789</p>
+                            <ul class="product-features">
+                                <li><i class="fas fa-check"></i> Self-Adhesive</li>
+                                <li><i class="fas fa-check"></i> Various Colors</li>
+                                <li><i class="fas fa-check"></i> Waterproof</li>
+                            </ul>
+                            <button class="buy-now-btn"><i class="fas fa-shopping-cart"></i> Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="col-lg-3 col-md-6 mb-4 product-item" data-code="PROD-567890" data-name="spiral notebook" data-tags="notebook spiral college">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" class="product-img" alt="Spiral Notebook">
+                        </div>
+                        <div class="product-body">
+                            <h5 class="product-title">Spiral Notebook</h5>
+                            <p class="product-price"><span>₹</span>7.99</p>
+                            <p class="product-code">PROD-567890</p>
+                            <ul class="product-features">
+                                <li><i class="fas fa-check"></i> 100 Pages</li>
+                                <li><i class="fas fa-check"></i> College Ruled</li>
+                                <li><i class="fas fa-check"></i> Durable Cover</li>
+                            </ul>
+                            <button class="buy-now-btn"><i class="fas fa-shopping-cart"></i> Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 6 -->
+                <div class="col-lg-3 col-md-6 mb-4 product-item" data-code="PROD-678901" data-name="ballpoint pens" data-tags="pens ballpoint black">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=898&q=80" class="product-img" alt="Ballpoint Pens">
+                            <div class="product-badge badge-offer"><i class="fas fa-tag"></i> 15% OFF</div>
+                        </div>
+                        <div class="product-body">
+                            <h5 class="product-title">Ballpoint Pens (Pack of 10)</h5>
+                            <p class="product-price"><span>₹</span>5.99 <span class="text-decoration-line-through text-muted small">₹6.99</span></p>
+                            <p class="product-code">PROD-678901</p>
+                            <ul class="product-features">
+                                <li><i class="fas fa-check"></i> Smooth Ink Flow</li>
+                                <li><i class="fas fa-check"></i> Comfortable Grip</li>
+                                <li><i class="fas fa-check"></i> Quick-Drying</li>
+                            </ul>
+                            <button class="buy-now-btn"><i class="fas fa-shopping-cart"></i> Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 7 -->
+                <div class="col-lg-3 col-md-6 mb-4 product-item" data-code="PROD-789012" data-name="composition notebook" data-tags="notebook composition school">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="product-img" alt="Composition Notebook">
+                            <div class="product-badge badge-demand"><i class="fas fa-fire"></i> HOT</div>
+                        </div>
+                        <div class="product-body">
+                            <h5 class="product-title">Composition Notebook</h5>
+                            <p class="product-price"><span>₹</span>6.99</p>
+                            <p class="product-code">PROD-789012</p>
+                            <ul class="product-features">
+                                <li><i class="fas fa-check"></i> 120 Pages</li>
+                                <li><i class="fas fa-check"></i> Marble Design</li>
+                                <li><i class="fas fa-check"></i> Sewn Binding</li>
+                            </ul>
+                            <button class="buy-now-btn"><i class="fas fa-shopping-cart"></i> Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 8 -->
+                <div class="col-lg-3 col-md-6 mb-4 product-item" data-code="PROD-890123" data-name="highlighter set" data-tags="highlighters markers study">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="product-img" alt="Highlighter Set">
+                            <div class="product-badge badge-killer"><i class="fas fa-bolt"></i> KILLER</div>
+                        </div>
+                        <div class="product-body">
+                            <h5 class="product-title">Highlighter Set (6 Colors)</h5>
+                            <p class="product-price"><span>₹</span>7.49</p>
+                            <p class="product-code">PROD-890123</p>
+                            <ul class="product-features">
+                                <li><i class="fas fa-check"></i> Chisel Tip</li>
+                                <li><i class="fas fa-check"></i> Quick-Dry</li>
+                                <li><i class="fas fa-check"></i> Vibrant Colors</li>
+                            </ul>
+                            <button class="buy-now-btn"><i class="fas fa-shopping-cart"></i> Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 9 -->
+                <div class="col-lg-3 col-md-6 mb-4 product-item" data-code="PROD-901234" data-name="sketchbook" data-tags="sketchbook art drawing">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="product-img" alt="Sketchbook">
+                        </div>
+                        <div class="product-body">
+                            <h5 class="product-title">Artist Sketchbook</h5>
+                            <p class="product-price"><span>₹</span>14.99</p>
+                            <p class="product-code">PROD-901234</p>
+                            <ul class="product-features">
+                                <li><i class="fas fa-check"></i> 100 Sheets</li>
+                                <li><i class="fas fa-check"></i> Acid-Free Paper</li>
+                                <li><i class="fas fa-check"></i> Spiral Bound</li>
+                            </ul>
+                            <button class="buy-now-btn"><i class="fas fa-shopping-cart"></i> Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 10 -->
+                <div class="col-lg-3 col-md-6 mb-4 product-item" data-code="PROD-012345" data-name="mechanical pencils" data-tags="pencils mechanical drawing">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="https://images.unsplash.com/photo-1598936062088-5d2a0f0c8c8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" class="product-img" alt="Mechanical Pencils">
+                            <div class="product-badge badge-new"><i class="fas fa-certificate"></i> NEW</div>
+                        </div>
+                        <div class="product-body">
+                            <h5 class="product-title">Mechanical Pencils (Set of 5)</h5>
+                            <p class="product-price"><span>₹</span>9.99</p>
+                            <p class="product-code">PROD-012345</p>
+                            <ul class="product-features">
+                                <li><i class="fas fa-check"></i> 0.5mm Lead</li>
+                                <li><i class="fas fa-check"></i> Eraser Included</li>
+                                <li><i class="fas fa-check"></i> Comfort Grip</li>
+                            </ul>
+                            <button class="buy-now-btn"><i class="fas fa-shopping-cart"></i> Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 11 -->
+                <div class="col-lg-3 col-md-6 mb-4 product-item" data-code="PROD-112233" data-name="sticky notes" data-tags="notes sticky reminders">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="https://images.unsplash.com/photo-1600189261867-30e5ffe7b8da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" class="product-img" alt="Sticky Notes">
+                            <div class="product-badge badge-offer"><i class="fas fa-tag"></i> 10% OFF</div>
+                        </div>
+                        <div class="product-body">
+                            <h5 class="product-title">Sticky Notes (6 Pads)</h5>
+                            <p class="product-price"><span>₹</span>5.49 <span class="text-decoration-line-through text-muted small">₹5.99</span></p>
+                            <p class="product-code">PROD-112233</p>
+                            <ul class="product-features">
+                                <li><i class="fas fa-check"></i> Various Colors</li>
+                                <li><i class="fas fa-check"></i> 3x3 Inches</li>
+                                <li><i class="fas fa-check"></i> Strong Adhesive</li>
+                            </ul>
+                            <button class="buy-now-btn"><i class="fas fa-shopping-cart"></i> Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 12 -->
+                <div class="col-lg-3 col-md-6 mb-4 product-item" data-code="PROD-223344" data-name="binder clips" data-tags="clips office binder">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="product-img" alt="Binder Clips">
+                            <div class="product-badge badge-demand"><i class="fas fa-fire"></i> HOT</div>
+                        </div>
+                        <div class="product-body">
+                            <h5 class="product-title">Binder Clips (Assorted Sizes)</h5>
+                            <p class="product-price"><span>₹</span>3.99</p>
+                            <p class="product-code">PROD-223344</p>
+                            <ul class="product-features">
+                                <li><i class="fas fa-check"></i> 50 Pieces</li>
+                                <li><i class="fas fa-check"></i> Black Finish</li>
+                                <li><i class="fas fa-check"></i> Strong Hold</li>
+                            </ul>
+                            <button class="buy-now-btn"><i class="fas fa-shopping-cart"></i> Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 13 -->
+                <div class="col-lg-3 col-md-6 mb-4 product-item" data-code="PROD-334455" data-name="colored pencils" data-tags="pencils colors drawing">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="https://images.unsplash.com/photo-1578913099869-2f4b679a7c1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" class="product-img" alt="Colored Pencils">
+                            <div class="product-badge badge-new"><i class="fas fa-certificate"></i> NEW</div>
+                        </div>
+                        <div class="product-body">
+                            <h5 class="product-title">Colored Pencils (24 Colors)</h5>
+                            <p class="product-price"><span>₹</span>11.99</p>
+                            <p class="product-code">PROD-334455</p>
+                            <ul class="product-features">
+                                <li><i class="fas fa-check"></i> Vibrant Colors</li>
+                                <li><i class="fas fa-check"></i> Break-Resistant</li>
+                                <li><i class="fas fa-check"></i> Smooth Application</li>
+                            </ul>
+                            <button class="buy-now-btn"><i class="fas fa-shopping-cart"></i> Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 14 -->
+                <div class="col-lg-3 col-md-6 mb-4 product-item" data-code="PROD-445566" data-name="marker set" data-tags="markers colors art">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="https://images.unsplash.com/photo-1600189261867-30e5ffe7b8da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" class="product-img" alt="Marker Set">
+                            <div class="product-badge badge-offer"><i class="fas fa-tag"></i> 15% OFF</div>
+                        </div>
+                        <div class="product-body">
+                            <h5 class="product-title">Marker Set (12 Colors)</h5>
+                            <p class="product-price"><span>₹</span>14.99 <span class="text-decoration-line-through text-muted small">₹17.99</span></p>
+                            <p class="product-code">PROD-445566</p>
+                            <ul class="product-features">
+                                <li><i class="fas fa-check"></i> Dual Tips</li>
+                                <li><i class="fas fa-check"></i> Alcohol-Based</li>
+                                <li><i class="fas fa-check"></i> Blendable Colors</li>
+                            </ul>
+                            <button class="buy-now-btn"><i class="fas fa-shopping-cart"></i> Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 15 -->
+                <div class="col-lg-3 col-md-6 mb-4 product-item" data-code="PROD-556677" data-name="watercolor set" data-tags="watercolor painting art">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="https://images.unsplash.com/photo-1579762715118-a6f1d4b934f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" class="product-img" alt="Watercolor Set">
+                            <div class="product-badge badge-killer"><i class="fas fa-bolt"></i> KILLER</div>
+                        </div>
+                        <div class="product-body">
+                            <h5 class="product-title">Watercolor Set (36 Colors)</h5>
+                            <p class="product-price"><span>₹</span>19.99</p>
+                            <p class="product-code">PROD-556677</p>
+                            <ul class="product-features">
+                                <li><i class="fas fa-check"></i> Highly Pigmented</li>
+                                <li><i class="fas fa-check"></i> Non-Toxic</li>
+                                <li><i class="fas fa-check"></i> Includes Brush</li>
+                            </ul>
+                            <button class="buy-now-btn"><i class="fas fa-shopping-cart"></i> Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 16 -->
+                <div class="col-lg-3 col-md-6 mb-4 product-item" data-code="PROD-667788" data-name="calligraphy set" data-tags="calligraphy pens writing">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="https://images.unsplash.com/photo-1585336261022-680e295ce3fe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="product-img" alt="Calligraphy Set">
+                            <div class="product-badge badge-demand"><i class="fas fa-fire"></i> HOT</div>
+                        </div>
+                        <div class="product-body">
+                            <h5 class="product-title">Calligraphy Set (6 Pens)</h5>
+                            <p class="product-price"><span>₹</span>12.49</p>
+                            <p class="product-code">PROD-667788</p>
+                            <ul class="product-features">
+                                <li><i class="fas fa-check"></i> Various Nib Sizes</li>
+                                <li><i class="fas fa-check"></i> Ink Refillable</li>
+                                <li><i class="fas fa-check"></i> Comfortable Grip</li>
+                            </ul>
+                            <button class="buy-now-btn"><i class="fas fa-shopping-cart"></i> Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 17 -->
+                <div class="col-lg-3 col-md-6 mb-4 product-item" data-code="PROD-778899" data-name="graph paper notebook" data-tags="notebook graph math">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" class="product-img" alt="Graph Paper Notebook">
+                        </div>
+                        <div class="product-body">
+                            <h5 class="product-title">Graph Paper Notebook</h5>
+                            <p class="product-price"><span>₹</span>8.49</p>
+                            <p class="product-code">PROD-778899</p>
+                            <ul class="product-features">
+                                <li><i class="fas fa-check"></i> 100 Pages</li>
+                                <li><i class="fas fa-check"></i> 5mm Grid</li>
+                                <li><i class="fas fa-check"></i> Perfect Binding</li>
+                            </ul>
+                            <button class="buy-now-btn"><i class="fas fa-shopping-cart"></i> Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 18 -->
+                <div class="col-lg-3 col-md-6 mb-4 product-item" data-code="PROD-889900" data-name="correction tape" data-tags="correction stationery">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="https://images.unsplash.com/photo-1585336261022-680e295ce3fe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="product-img" alt="Correction Tape">
+                            <div class="product-badge badge-offer"><i class="fas fa-tag"></i> 10% OFF</div>
+                        </div>
+                        <div class="product-body">
+                            <h5 class="product-title">Correction Tape (2 Pack)</h5>
+                            <p class="product-price"><span>₹</span>4.49 <span class="text-decoration-line-through text-muted small">₹4.99</span></p>
+                            <p class="product-code">PROD-889900</p>
+                            <ul class="product-features">
+                                <li><i class="fas fa-check"></i> Smooth Application</li>
+                                <li><i class="fas fa-check"></i> Quick-Drying</li>
+                                <li><i class="fas fa-check"></i> No Smudging</li>
+                            </ul>
+                            <button class="buy-now-btn"><i class="fas fa-shopping-cart"></i> Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 19 -->
+                <div class="col-lg-3 col-md-6 mb-4 product-item" data-code="PROD-990011" data-name="index cards" data-tags="cards study notes">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="https://images.unsplash.com/photo-1591382696684-38c427c4d291?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" class="product-img" alt="Index Cards">
+                            <div class="product-badge badge-new"><i class="fas fa-certificate"></i> NEW</div>
+                        </div>
+                        <div class="product-body">
+                            <h5 class="product-title">Index Cards (100 Pack)</h5>
+                            <p class="product-price"><span>₹</span>5.99</p>
+                            <p class="product-code">PROD-990011</p>
+                            <ul class="product-features">
+                                <li><i class="fas fa-check"></i> 3x5 Inches</li>
+                                <li><i class="fas fa-check"></i> Lined</li>
+                                <li><i class="fas fa-check"></i> Sturdy Cardstock</li>
+                            </ul>
+                            <button class="buy-now-btn"><i class="fas fa-shopping-cart"></i> Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 20 -->
+                <div class="col-lg-3 col-md-6 mb-4 product-item" data-code="PROD-001122" data-name="stapler" data-tags="stapler office supplies">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="product-img" alt="Stapler">
+                            <div class="product-badge badge-demand"><i class="fas fa-fire"></i> HOT</div>
+                        </div>
+                        <div class="product-body">
+                            <h5 class="product-title">Heavy-Duty Stapler</h5>
+                            <p class="product-price"><span>₹</span>6.99</p>
+                            <p class="product-code">PROD-001122</p>
+                            <ul class="product-features">
+                                <li><i class="fas fa-check"></i> 20 Sheet Capacity</li>
+                                <li><i class="fas fa-check"></i> Anti-Slip Base</li>
+                                <li><i class="fas fa-check"></i> Durable Metal</li>
+                            </ul>
+                            <button class="buy-now-btn"><i class="fas fa-shopping-cart"></i> Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Purchase Section -->
+    <section class="purchase-section">
+        <div class="container">
+            <h3 class="mb-4">Ready to place your order?</h3>
+            <a href="index.html#contact" class="purchase-btn"><i class="fas fa-shopping-bag"></i> Purchase Now</a>
+            <a href="https://wa.me/919876543210?text=Hi%20I'm%20interested%20in%20your%20products" class="whatsapp-btn" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h3 class="footer-title">Notebook Store</h3>
+                    <p>Providing premium quality school and office supplies since 2010. Your one-stop shop for all stationery needs.</p>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h3 class="footer-title">Products</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Notebooks</a></li>
+                        <li><a href="#">Pens & Pencils</a></li>
+                        <li><a href="#">Brown Paper</a></li>
+                        <li><a href="#">Name Slips</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h3 class="footer-title">Customer Service</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 text-center text-md-start">
+                            <p class="copyright">© 2023 Notebook Store. All Rights Reserved.</p>
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <div class="payment-methods">
+                                <i class="fab fa-cc-visa fa-2x me-2"></i>
+                                <i class="fab fa-cc-mastercard fa-2x me-2"></i>
+                                <i class="fab fa-cc-paypal fa-2x me-2"></i>
+                                <i class="fab fa-cc-amex fa-2x"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Back to Top Button
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 300) {
+                $('.back-to-top').addClass('active');
+            } else {
+                $('.back-to-top').removeClass('active');
+            }
+        });
+        
+        $('.back-to-top').click(function(e) {
+            e.preventDefault();
+            $('html, body').animate({scrollTop: 0}, '300');
+        });
+        
+        // Enhanced Search Functionality with Dynamic Product Handling
+        $(document).ready(function() {
+            // Function to get all products (works with dynamically added products)
+            function getAllProducts() {
+                const products = [];
+                $('.product-item').each(function() {
+                    products.push({
+                        name: $(this).data('name'),
+                        code: $(this).data('code'),
+                        tags: $(this).data('tags'),
+                        element: $(this)
+                    });
+                });
+                return products;
+            }
+
+            // Search when button is clicked
+            $('#searchBtn').click(function() {
+                performSearch();
+                $('#searchSuggestions').removeClass('show');
+            });
+
+            // Refresh button to show all products
+            $('#refreshBtn').click(function() {
+                $('#searchInput').val('');
+                $('.product-item').show();
+                $('#noResultsMessage').remove();
+                $('#searchSuggestions').removeClass('show');
+            });
+
+            // Search when Enter key is pressed
+            $('#searchInput').keypress(function(e) {
+                if (e.which === 13) {
+                    performSearch();
+                    $('#searchSuggestions').removeClass('show');
+                }
+            });
+
+            // Show suggestions as user types
+            $('#searchInput').on('input', function() {
+                const searchTerm = $(this).val().toLowerCase();
+                if (searchTerm.length > 0) {
+                    showSuggestions(searchTerm);
+                } else {
+                    $('#searchSuggestions').removeClass('show');
+                    // Show all products when search is empty
+                    $('.product-item').show();
+                    $('#noResultsMessage').remove();
+                }
+            });
+
+            function showSuggestions(term) {
+                const products = getAllProducts();
+                const suggestions = [];
+                
+                // Find matching products
+                products.forEach(product => {
+                    if (product.name.includes(term) || 
+                        product.code.toLowerCase().includes(term) ||
+                        product.tags.includes(term)) {
+                        suggestions.push({
+                            text: `${product.name} (${product.code})`,
+                            element: product.element
+                        });
+                    }
+                });
+                
+                const $suggestionsContainer = $('#searchSuggestions');
+                $suggestionsContainer.empty();
+                
+                if (suggestions.length > 0) {
+                    suggestions.forEach(suggestion => {
+                        // Highlight matching text
+                        const displayText = suggestion.text.replace(
+                            new RegExp(term, 'gi'),
+                            match => `<span class="suggestion-highlight">${match}</span>`
+                        );
+                        
+                        $suggestionsContainer.append(
+                            `<div class="suggestion-item">${displayText}</div>`
+                        );
+                    });
+                    
+                    $suggestionsContainer.addClass('show');
+                    
+                    // Handle suggestion click
+                    $('.suggestion-item').click(function() {
+                        const index = $(this).index();
+                        const productElement = suggestions[index].element;
+                        
+                        // Hide all products
+                        $('.product-item').hide();
+                        
+                        // Show the selected product
+                        productElement.show();
+                        
+                        // Update search input
+                        $('#searchInput').val(suggestions[index].text);
+                        
+                        // Hide suggestions
+                        $suggestionsContainer.removeClass('show');
+                        
+                        // Scroll to the product
+                        $('html, body').animate({
+                            scrollTop: productElement.offset().top - 100
+                        }, 500);
+                    });
+                } else {
+                    $suggestionsContainer.removeClass('show');
+                }
+            }
+            
+            function performSearch() {
+                const searchTerm = $('#searchInput').val().toLowerCase();
+                const products = getAllProducts();
+                let foundResults = false;
+                
+                if (searchTerm.length === 0) {
+                    // If search is empty, show all products
+                    $('.product-item').show();
+                    $('#noResultsMessage').remove();
+                    return;
+                }
+                
+                products.forEach(product => {
+                    if (product.name.includes(searchTerm) || 
+                        product.code.toLowerCase().includes(searchTerm) || 
+                        product.tags.includes(searchTerm)) {
+                        product.element.show();
+                        foundResults = true;
+                    } else {
+                        product.element.hide();
+                    }
+                });
+                
+                // Show no results message if no products match
+                if (!foundResults && searchTerm.length > 0) {
+                    if ($('#noResultsMessage').length === 0) {
+                        const noResultsHtml = `
+                            <div class="col-12" id="noResultsMessage">
+                                <div class="no-results">
+                                    <div class="no-results-icon">
+                                        <i class="fas fa-search"></i>
+                                    </div>
+                                    <h3>No Products Found</h3>
+                                    <p>We couldn't find any products matching your search. Try different keywords.</p>
+                                </div>
+                            </div>
+                        `;
+                        $('#productsContainer').append(noResultsHtml);
+                    }
+                } else {
+                    $('#noResultsMessage').remove();
+                }
+            }
+            
+            // Close suggestions when clicking outside
+            $(document).click(function(e) {
+                if (!$(e.target).closest('.search-container').length) {
+                    $('#searchSuggestions').removeClass('show');
+                }
+            });
+            
+            // Buy Now button click handler
+            $(document).on('click', '.buy-now-btn', function() {
+                window.location.href = 'index.html#contact';
+            });
+        });
+    </script>
+</body>
+</html>
