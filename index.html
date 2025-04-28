@@ -3,69 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Premium Notebook Store - Shop high-quality notebooks, pens, brown paper, and school supplies. Best prices for back-to-school essentials.">
-    <meta name="keywords" content="notebooks, pens, school supplies, stationery, brown paper, back to school">
-    <meta name="author" content="Notebook Store">
-    <meta property="og:title" content="Premium Notebook Store">
-    <meta property="og:description" content="Shop high-quality notebooks, pens, and school supplies">
+    <meta name="description" content="Premium quality notebooks at affordable prices. Student discounts available. Fast delivery on all orders.">
+    <meta name="keywords" content="notebooks, stationery, school supplies, student offers, writing pads, journals">
+    <meta name="author" content="Dean's Desk">
+    <meta property="og:title" content="Dean's Desk - Quality Writing Solutions">
+    <meta property="og:description" content="Premium quality notebooks at affordable prices with student discounts.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yournotebookstore.com">
-    <meta property="og:image" content="https://yournotebookstore.com/images/logo.png">
-    <title>Ecliptica Notes</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
+    <meta name="robots" content="index, follow">
+    <title>Dean's Desk: Quality Notebooks at Low Prices</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Animate.css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
         :root {
-            --primary-color: #3498db;
-            --secondary-color: #2c3e50;
-            --accent-color: #e74c3c;
-            --light-color: #ecf0f1;
-            --dark-color: #2c3e50;
-            --highlight-color: #1abc9c;
+            --primary-color: #00652e;
+            --secondary-color: #333;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
         }
         
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #f8f9fa;
-            color: #333;
             overflow-x: hidden;
+            color: var(--secondary-color);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Roboto Slab', serif;
+            font-weight: 700;
         }
         
         .navbar {
-            background-color: var(--secondary-color);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             padding: 15px 0;
             transition: all 0.3s ease;
         }
         
-        .navbar-brand {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 24px;
-            color: white !important;
+        .navbar.scrolled {
+            padding: 10px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
         
-        .navbar-brand span {
-            color: var(--primary-color);
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color) !important;
+            font-size: 1.8rem;
+        }
+        
+        .navbar-brand i {
+            margin-right: 10px;
         }
         
         .nav-link {
-            color: white !important;
-            font-weight: 500;
+            font-weight: 600;
             margin: 0 10px;
             position: relative;
-            transition: all 0.3s ease;
+            color: var(--secondary-color) !important;
         }
         
         .nav-link:hover {
@@ -77,9 +72,9 @@
             position: absolute;
             width: 0;
             height: 2px;
+            background: var(--primary-color);
             bottom: 0;
             left: 0;
-            background-color: var(--primary-color);
             transition: width 0.3s ease;
         }
         
@@ -87,199 +82,76 @@
             width: 100%;
         }
         
-        .navbar-toggler {
-            border: none;
-            color: white;
-        }
-        
-        .navbar-toggler:focus {
-            box-shadow: none;
-        }
-        
         .hero-section {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
             color: white;
-            padding: 100px 0;
-            position: relative;
-            overflow: hidden;
+            padding: 120px 0;
+            text-align: center;
         }
         
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
-            opacity: 0.3;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .hero-title {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
+        .hero-section h1 {
             font-size: 3.5rem;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: fadeInDown 1s ease;
         }
         
-        .hero-subtitle {
-            font-size: 1.5rem;
+        .hero-section p {
+            font-size: 1.2rem;
             margin-bottom: 30px;
-            opacity: 0.9;
+            animation: fadeInUp 1s ease;
         }
         
         .btn-primary {
             background-color: var(--primary-color);
-            border: none;
-            padding: 12px 30px;
+            border-color: var(--primary-color);
+            padding: 10px 25px;
             font-weight: 600;
-            border-radius: 50px;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
         }
         
         .btn-primary:hover {
-            background-color: #2980b9;
+            background-color: #d00000;
+            border-color: #a80808;
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.6);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
         
         .section-title {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            color: var(--secondary-color);
             position: relative;
             margin-bottom: 50px;
             text-align: center;
         }
         
+        .section-title h2 {
+            display: inline-block;
+            background-color: white;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+            color: var(--secondary-color);
+        }
+        
         .section-title::after {
             content: '';
             position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
+            width: 100%;
+            height: 2px;
             background-color: var(--primary-color);
-            border-radius: 2px;
-        }
-        
-        .product-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            margin-bottom: 30px;
-            position: relative;
-        }
-        
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .product-img {
-            height: 200px;
-            object-fit: contain;
-            padding: 20px;
-            background-color: #f8f9fa;
-        }
-        
-        .product-badge {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: var(--accent-color);
-            color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 12px;
-            font-weight: 600;
-        }
-        
-        .product-title {
-            font-weight: 600;
-            margin-top: 15px;
-            color: var(--dark-color);
-        }
-        
-        .product-price {
-            color: var(--primary-color);
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
-        
-        .product-code {
-            font-size: 12px;
-            color: #777;
-            margin-top: 5px;
-        }
-        
-        .btn-add-to-cart {
-            background-color: var(--highlight-color);
-            color: white;
-            border: none;
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            margin-top: 10px;
-        }
-        
-        .btn-add-to-cart:hover {
-            background-color: #16a085;
-            transform: translateY(-2px);
-        }
-        
-        .about-section {
-            padding: 100px 0;
-            background-color: white;
-        }
-        
-        .about-img {
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-            transform: rotate(-5deg);
-            transition: all 0.5s ease;
-        }
-        
-        .about-img:hover {
-            transform: rotate(0deg) scale(1.02);
-        }
-        
-        .about-content {
-            padding-left: 50px;
-        }
-        
-        .about-title {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-        }
-        
-        .about-text {
-            color: #666;
-            line-height: 1.8;
-            margin-bottom: 30px;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            z-index: 0;
         }
         
         .feature-box {
-            background-color: white;
             padding: 30px;
-            border-radius: 10px;
+            border-radius: 5px;
+            background-color: white;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            text-align: center;
             transition: all 0.3s ease;
+            text-align: center;
             margin-bottom: 30px;
             height: 100%;
         }
@@ -290,170 +162,209 @@
         }
         
         .feature-icon {
-            font-size: 2.5rem;
+            font-size: 3rem;
             color: var(--primary-color);
             margin-bottom: 20px;
         }
         
-        .feature-title {
-            font-weight: 600;
-            color: var(--dark-color);
+        .product-card {
+            border: 1px solid #eee;
+            border-radius: 5px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+            background-color: white;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-img {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .product-img img {
+            transform: scale(1.05);
+        }
+        
+        .product-code {
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        
+        .product-features {
+            list-style-type: none;
+            padding-left: 0;
             margin-bottom: 15px;
         }
         
-        .feature-text {
-            color: #666;
-            line-height: 1.6;
-        }
-        
-        .testimonial-section {
-            background-color: var(--light-color);
-            padding: 100px 0;
-        }
-        
-        .testimonial-card {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            margin: 15px;
+        .product-features li {
             position: relative;
+            padding-left: 20px;
+            margin-bottom: 5px;
         }
         
-        .testimonial-card::before {
-            content: '\201C';
-            font-family: Georgia, serif;
-            font-size: 60px;
-            color: rgba(52, 152, 219, 0.1);
+        .product-features li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
             position: absolute;
-            top: 10px;
-            left: 10px;
+            left: 0;
+            color: var(--primary-color);
         }
         
-        .testimonial-text {
-            font-style: italic;
-            color: #555;
-            line-height: 1.8;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .testimonial-author {
-            font-weight: 600;
-            color: var(--dark-color);
-        }
-        
-        .testimonial-rating {
-            color: #f1c40f;
-            margin-bottom: 10px;
-        }
-        
-        .carousel-indicators [data-bs-target] {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            margin: 0 5px;
-            background-color: rgba(52, 152, 219, 0.5);
-            border: none;
-        }
-        
-        .carousel-indicators .active {
+        .more-btn {
             background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .more-btn:hover {
+            background-color: #b20000;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 94, 20, 0.3);
+        }
+        
+        .carousel-item img {
+            height: 400px;
+            object-fit: cover;
+        }
+        
+        .carousel-indicators button {
+            width: 12px !important;
+            height: 12px !important;
+            border-radius: 50% !important;
+            margin: 0 5px !important;
+            background-color: #ccc !important;
+            border: none !important;
+        }
+        
+        .carousel-indicators button.active {
+            background-color: var(--primary-color) !important;
         }
         
         .contact-section {
-            padding: 100px 0;
+            background-color: #f8f9fa;
+            padding: 80px 0;
+        }
+        
+        .contact-form {
             background-color: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-control {
+            height: 45px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+        }
+        
+        .form-control:focus {
+            box-shadow: none;
+            border-color: var(--primary-color);
+        }
+        
+        textarea.form-control {
+            height: auto;
         }
         
         .contact-info {
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 40px;
-            border-radius: 10px;
-            height: 100%;
+            margin-top: 30px;
         }
         
-        .contact-title {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            margin-bottom: 30px;
-            color: white;
-        }
-        
-        .contact-item {
-            margin-bottom: 25px;
+        .contact-info-item {
             display: flex;
             align-items: flex-start;
+            margin-bottom: 20px;
         }
         
-        .contact-icon {
+        .contact-info-icon {
             font-size: 1.5rem;
             color: var(--primary-color);
             margin-right: 15px;
             margin-top: 5px;
         }
         
-        .contact-text h5 {
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-        
-        .contact-text p {
-            opacity: 0.8;
-            margin-bottom: 0;
-        }
-        
-        .social-links {
-            display: flex;
-            margin-top: 30px;
-        }
-        
-        .social-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.1);
+        .whatsapp-btn {
+            background-color: #00652e;
             color: white;
-            margin-right: 10px;
+            border-radius: 50px;
+            padding: 12px 25px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
             transition: all 0.3s ease;
+            text-decoration: none;
         }
         
-        .social-link:hover {
-            background-color: var(--primary-color);
+        .whatsapp-btn:hover {
+            background-color: #d00000;
+            color: white;
             transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+        }
+        
+        .whatsapp-btn i {
+            margin-right: 10px;
+            font-size: 1.2rem;
         }
         
         .footer {
             background-color: var(--secondary-color);
             color: white;
-            padding: 60px 0 0;
+            padding: 60px 0 20px;
         }
         
-        .footer-title {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            margin-bottom: 25px;
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        
+        .footer-links h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
             position: relative;
+            padding-bottom: 10px;
         }
         
-        .footer-title::after {
+        .footer-links h4::after {
             content: '';
             position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 40px;
-            height: 3px;
+            width: 50px;
+            height: 2px;
             background-color: var(--primary-color);
+            bottom: 0;
+            left: 0;
         }
         
-        .footer-links {
-            list-style: none;
-            padding: 0;
+        .footer-links ul {
+            list-style-type: none;
+            padding-left: 0;
         }
         
         .footer-links li {
@@ -461,25 +372,32 @@
         }
         
         .footer-links a {
-            color: rgba(255, 255, 255, 0.7);
+            color: #ddd;
             text-decoration: none;
             transition: all 0.3s ease;
         }
         
         .footer-links a:hover {
-            color: white;
+            color: var(--primary-color);
             padding-left: 5px;
         }
         
-        .footer-bottom {
-            background-color: rgba(0, 0, 0, 0.1);
-            padding: 20px 0;
-            margin-top: 40px;
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: all 0.3s ease;
         }
         
-        .copyright {
-            color: rgba(255, 255, 255, 0.7);
-            margin: 0;
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
         }
         
         .back-to-top {
@@ -494,8 +412,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            font-size: 1.2rem;
+            cursor: pointer;
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
@@ -508,11 +426,82 @@
         }
         
         .back-to-top:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-3px);
+            background-color: #e04b0b;
+            transform: translateY(-5px);
+        }
+        
+        .search-container {
+            margin: 30px 0;
+            position: relative;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 12px 20px;
+            border-radius: 50px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 5px 15px rgba(255, 94, 20, 0.1);
+        }
+        
+        .search-suggestions {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+            display: none;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .search-suggestions.active {
+            display: block;
+        }
+        
+        .suggestion-item {
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .suggestion-item:hover {
+            background-color: #f8f9fa;
+            color: var(--primary-color);
         }
         
         /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
         .animate-on-scroll {
             opacity: 0;
             transform: translateY(30px);
@@ -524,321 +513,645 @@
             transform: translateY(0);
         }
         
+        /* Responsive styles */
         @media (max-width: 991.98px) {
-            .hero-title {
+            .hero-section h1 {
                 font-size: 2.5rem;
             }
             
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-            
-            .about-content {
-                padding-left: 0;
-                margin-top: 40px;
+            .hero-section {
+                padding: 80px 0;
             }
         }
         
         @media (max-width: 767.98px) {
-            .hero-section {
-                padding: 80px 0;
-            }
-            
-            .hero-title {
+            .hero-section h1 {
                 font-size: 2rem;
             }
             
-            .section-title {
-                font-size: 1.8rem;
+            .hero-section p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.5rem;
+            }
+            
+            .carousel-item img {
+                height: 300px;
             }
         }
         
-        /* Custom shape for about section image */
-        .custom-shape {
-            position: relative;
-            width: 100%;
-            height: 100%;
-        }
-        
-        .custom-shape::before {
-            content: '';
-            position: absolute;
-            top: -20px;
-            left: -20px;
-            width: 100%;
-            height: 100%;
-            border: 3px solid var(--primary-color);
-            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-            z-index: -1;
-            transition: all 0.5s ease;
-        }
-        
-        .about-img:hover .custom-shape::before {
-            border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
-            top: -10px;
-            left: -10px;
+        @media (max-width: 575.98px) {
+            .navbar-brand {
+                font-size: 1.5rem;
+            }
+            
+            .hero-section {
+                padding: 60px 0;
+            }
+            
+            .hero-section h1 {
+                font-size: 1.8rem;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#">Ecliptica <span></span>Notes</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+            <a class="navbar-brand" href="index.html">
+                <i class=""></i>Dean's Desk
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fas fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Home</a>
+                        <a class="nav-link" href="#home">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#products">Products</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
+                        <a class="nav-link" href="#features">Features</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
                     </li>
                 </ul>
+                <div class="social-links ms-lg-4 mt-3 mt-lg-0">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section">
+    <section class="hero-section" id="home">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="hero-content">
-                        <h1 class="hero-title animate__animated animate__fadeInDown">Premium School Supplies</h1>
-                        <p class="hero-subtitle animate__animated animate__fadeInDown animate__delay-1s">High-quality notebooks, pens & stationery for your academic success</p>
-                        <a href="#products" class="btn btn-primary btn-lg animate__animated animate__fadeInUp animate__delay-2s">Shop Now <i class="fas fa-arrow-right ms-2"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Notebooks and Pens" class="img-fluid animate__animated animate__fadeInRight animate__delay-1s">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Products Section -->
-    <section id="products" class="py-5">
-        <div class="container">
-            <h2 class="section-title animate-on-scroll">Featured Products</h2>
-            <div class="row">
-                <!-- Product 1 -->
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="product-card animate-on-scroll" data-delay="0.1s">
-                        <div class="product-badge">Sale</div>
-                        <img src="https://images.unsplash.com/photo-1620191957895-4c043d06d6a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="card-img-top product-img" alt="Premium Notebook">
-                        <div class="card-body text-center">
-                            <h5 class="product-title">Premium Notebook</h5>
-                            <p class="product-price">$12.99</p>
-                            <p class="product-code">PROD-123456</p>
-                            <button class="btn btn-add-to-cart">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Product 2 -->
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="product-card animate-on-scroll" data-delay="0.2s">
-                        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80" class="card-img-top product-img" alt="Gel Pens Set">
-                        <div class="card-body text-center">
-                            <h5 class="product-title">Gel Pens Set (12 Colors)</h5>
-                            <p class="product-price">$8.99</p>
-                            <p class="product-code">PROD-234567</p>
-                            <button class="btn btn-add-to-cart">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Product 3 -->
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="product-card animate-on-scroll" data-delay="0.3s">
-                        <div class="product-badge">New</div>
-                        <img src="https://images.unsplash.com/photo-1518655048521-f130df041f66?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="card-img-top product-img" alt="Brown Paper Notebook">
-                        <div class="card-body text-center">
-                            <h5 class="product-title">Brown Paper Notebook</h5>
-                            <p class="product-price">$9.99</p>
-                            <p class="product-code">PROD-345678</p>
-                            <button class="btn btn-add-to-cart">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Product 4 -->
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="product-card animate-on-scroll" data-delay="0.4s">
-                        <img src="https://images.unsplash.com/photo-1455885661740-29cbf08a42fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" class="card-img-top product-img" alt="Name Slips">
-                        <div class="card-body text-center">
-                            <h5 class="product-title">Name Slips (Pack of 50)</h5>
-                            <p class="product-price">$4.99</p>
-                            <p class="product-code">PROD-456789</p>
-                            <button class="btn btn-add-to-cart">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-4 animate-on-scroll">
-                <a href="products.html" class="btn btn-primary btn-lg">Explore All Products <i class="fas fa-arrow-right ms-2"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="py-5 bg-light">
-        <div class="container">
-            <h2 class="section-title animate-on-scroll">Why Choose Us</h2>
-            <div class="row">
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="feature-box animate-on-scroll" data-delay="0.1s">
-                        <div class="feature-icon">
-                            <i class="fas fa-award"></i>
-                        </div>
-                        <h3 class="feature-title">Premium Quality</h3>
-                        <p class="feature-text">We source only the highest quality materials for our notebooks and stationery products.</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="feature-box animate-on-scroll" data-delay="0.2s">
-                        <div class="feature-icon">
-                            <i class="fas fa-truck"></i>
-                        </div>
-                        <h3 class="feature-title">Fast Delivery</h3>
-                        <p class="feature-text">Get your school supplies delivered quickly with our reliable shipping partners.</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="feature-box animate-on-scroll" data-delay="0.3s">
-                        <div class="feature-icon">
-                            <i class="fas fa-percentage"></i>
-                        </div>
-                        <h3 class="feature-title">Student Discounts</h3>
-                        <p class="feature-text">Special discounts available for students with valid ID cards.</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="feature-box animate-on-scroll" data-delay="0.4s">
-                        <div class="feature-icon">
-                            <i class="fas fa-headset"></i>
-                        </div>
-                        <h3 class="feature-title">24/7 Support</h3>
-                        <p class="feature-text">Our customer service team is always ready to assist you with any questions.</p>
-                    </div>
-                </div>
-            </div>
+            <h1>Dean's Desk Notebooks</h1>
+            <p>Ace your schoolwork without breaking the bank: Dean's Desk notebooks.</p>
+            <a href="#products" class="btn btn-primary btn-lg">Explore Products</a>
         </div>
     </section>
 
     <!-- Carousel Section -->
     <section class="py-5">
         <div class="container">
-            <h2 class="section-title animate-on-scroll">Our Collections</h2>
             <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                    <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                    <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="2"></button>
+                    <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="3"></button>
+                    <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="4"></button>
                 </div>
                 <div class="carousel-inner">
-                    <div class="carousel-item active" data-bs-interval="5000">
-                        <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" class="d-block w-100 rounded" alt="Notebook Collection">
+                    <div class="carousel-item active">
+                        <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="d-block w-100" alt="Notebook Collection">
                     </div>
-                    <div class="carousel-item" data-bs-interval="5000">
-                        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=898&q=80" class="d-block w-100 rounded" alt="Pen Collection">
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1476&q=80" class="d-block w-100" alt="Student Notebooks">
                     </div>
-                    <div class="carousel-item" data-bs-interval="5000">
-                        <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="d-block w-100 rounded" alt="School Supplies">
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" class="d-block w-100" alt="Creative Notebooks">
                     </div>
-                    <div class="carousel-item" data-bs-interval="5000">
-                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="d-block w-100 rounded" alt="Office Supplies">
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1373&q=80" class="d-block w-100" alt="Professional Notebooks">
                     </div>
-                    <div class="carousel-item" data-bs-interval="5000">
-                        <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="d-block w-100 rounded" alt="Back to School">
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1398&q=80" class="d-block w-100" alt="Special Edition Notebooks">
                     </div>
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about-section">
+    <!-- Features Section -->
+    <section class="py-5 bg-light" id="features">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="about-img animate-on-scroll">
-                        <div class="custom-shape">
-                            <img src="images/aboutEclipticaNotes.jpg" alt="Our Team" class="img-fluid rounded">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="about-content animate-on-scroll">
-                        <h2 class="about-title">About Ecliptica Notes</h2>
-                        <p class="about-text"><strong>Ecliptica Notes </strong> was established in Guruvayur in 2025 with a clear focus: to provide incredibly low-cost essential stationery for the upcoming school opening. We offer a curated selection of<strong> 20 essential and important products</strong> perfect for students, including quality pens, versatile A4 sheets, practical brown paper, and more – no unnecessary items, just the essentials – all designed to be budget-friendly. Discover attractive offers and equip yourself or your students for the new academic year without compromising on quality.</p>
-                        <p class="about-text">Please note that this is a static website for the school opening period, showcasing our essential products and attractive offers. To place your order, kindly contact us by calling or <strong>WhatsApping +91 95628 98601.</strong> We will be accepting orders for the school opening essentials until approximately May 30th. Contact us before this date to secure your supplies of low-cost notebooks and our range of 20 essential school items. </p>
-                        <a href="#contact" class="btn btn-primary">Contact Us</a>
-                    </div>
-                </div>
+            <div class="section-title">
+                <h2>Why Choose Us</h2>
             </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonial-section">
-        <div class="container">
-            <h2 class="section-title animate-on-scroll">What Our Customers Say</h2>
             <div class="row">
-                <div class="col-lg-4">
-                    <div class="testimonial-card animate-on-scroll" data-delay="0.1s">
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                <div class="col-md-4 animate-on-scroll">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-award"></i>
                         </div>
-                        <p class="testimonial-text">The quality of these notebooks is exceptional! The paper is thick and doesn't bleed through, even with fountain pens. I'll definitely be buying more.</p>
-                        <p class="testimonial-author">- Sarah Johnson, College Student</p>
+                        <h3>High Quality</h3>
+                        <p>Premium materials and craftsmanship ensure our notebooks stand the test of time.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 animate-on-scroll">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-tag"></i>
+                        </div>
+                        <h3>Low Prices</h3>
+                        <p>Direct-from-manufacturer pricing means you get the best value for your money.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 animate-on-scroll">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Student Discount</h3>
+                        <p>20% off for school and college students with valid ID card or hall ticket.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 animate-on-scroll">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <h3>Fast Delivery</h3>
+                        <p>We deliver quickly to ensure you get your notebooks when you need them.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 animate-on-scroll">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3>Eco-Friendly</h3>
+                        <p>Our notebooks are made from sustainable materials to protect the environment.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 animate-on-scroll">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-pen-nib"></i>
+                        </div>
+                        <h3>Smooth Writing Paper</h3>
+                        <p>Enjoy a smooth writing experience with our high-quality.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="py-5" id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Products</h2>
+            </div>
+            
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search notebooks..." id="searchInput">
+                <div class="search-suggestions" id="searchSuggestions">
+                    <!-- Suggestions will be added dynamically -->
+                </div>
+            </div>
+            
+            <div class="row">
+                <!-- First 7 products with "More Details" button -->
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1568043210943-0e8aac4b9734?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Classic Notebook">
+                        </div>
+                        <div class="product-body p-3">
+                            <h4>Classic Notebook</h4>
+                            <div class="product-code">NP-1001</div>
+                            <ul class="product-features">
+                                <li>200 pages</li>
+                                <li>A5 size</li>
+                                <li>Premium paper</li>
+                            </ul>
+                            <a href="#" class="more-btn">More Details</a>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="col-lg-4">
-                    <div class="testimonial-card animate-on-scroll" data-delay="0.2s">
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1621246163563-7a4f296f8a20?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Spiral Notebook">
                         </div>
-                        <p class="testimonial-text">I ordered pens for my entire office and everyone loves them. The delivery was fast and the customer service was excellent.</p>
-                        <p class="testimonial-author">- Michael Chen, Office Manager</p>
+                        <div class="product-body p-3">
+                            <h4>Spiral Notebook</h4>
+                            <div class="product-code">NP-1002</div>
+                            <ul class="product-features">
+                                <li>150 pages</li>
+                                <li>College ruled</li>
+                                <li>Durable cover</li>
+                            </ul>
+                            <a href="#" class="more-btn">More Details</a>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="col-lg-4">
-                    <div class="testimonial-card animate-on-scroll" data-delay="0.3s">
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Executive Notebook">
                         </div>
-                        <p class="testimonial-text">As a teacher, I appreciate the quality and variety of school supplies available. The brown paper notebooks are perfect for my art classes.</p>
-                        <p class="testimonial-author">- David Wilson, High School Teacher</p>
+                        <div class="product-body p-3">
+                            <h4>Executive Notebook</h4>
+                            <div class="product-code">NP-1003</div>
+                            <ul class="product-features">
+                                <li>Leather cover</li>
+                                <li>240 pages</li>
+                                <li>Premium binding</li>
+                            </ul>
+                            <a href="#" class="more-btn">More Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1510172951991-856a62a9e395?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Sketchbook">
+                        </div>
+                        <div class="product-body p-3">
+                            <h4>Artist Sketchbook</h4>
+                            <div class="product-code">NP-1004</div>
+                            <ul class="product-features">
+                                <li>Thick paper</li>
+                                <li>120 pages</li>
+                                <li>Perfect for all media</li>
+                            </ul>
+                            <a href="#" class="more-btn">More Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Bullet Journal">
+                        </div>
+                        <div class="product-body p-3">
+                            <h4>Bullet Journal</h4>
+                            <div class="product-code">NP-1005</div>
+                            <ul class="product-features">
+                                <li>Dotted pages</li>
+                                <li>Hardcover</li>
+                                <li>Bookmark included</li>
+                            </ul>
+                            <a href="#" class="more-btn">More Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Student Notebook">
+                        </div>
+                        <div class="product-body p-3">
+                            <h4>Student Notebook</h4>
+                            <div class="product-code">NP-1006</div>
+                            <ul class="product-features">
+                                <li>100 pages</li>
+                                <li>Affordable price</li>
+                                <li>Multiple colors</li>
+                            </ul>
+                            <a href="#" class="more-btn">More Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1398&q=80" alt="Premium Notebook">
+                        </div>
+                        <div class="product-body p-3">
+                            <h4>Premium Notebook</h4>
+                            <div class="product-code">NP-1007</div>
+                            <ul class="product-features">
+                                <li>300 pages</li>
+                                <li>Luxury cover</li>
+                                <li>Silk bookmark</li>
+                            </ul>
+                            <a href="#" class="more-btn">More Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Remaining 18 products (3 per line) -->
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1590856029826-c7a73142bbf1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Travel Journal">
+                        </div>
+                        <div class="product-body p-3">
+                            <h4>Travel Journal</h4>
+                            <div class="product-code">NP-1008</div>
+                            <ul class="product-features">
+                                <li>Pocket size</li>
+                                <li>Elastic closure</li>
+                                <li>120 pages</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1542038789716-6a4e7b6a2a0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Composition Book">
+                        </div>
+                        <div class="product-body p-3">
+                            <h4>Composition Book</h4>
+                            <div class="product-code">NP-1009</div>
+                            <ul class="product-features">
+                                <li>200 pages</li>
+                                <li>Wide ruled</li>
+                                <li>Durable cover</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1476&q=80" alt="Graph Paper Notebook">
+                        </div>
+                        <div class="product-body p-3">
+                            <h4>Graph Paper Notebook</h4>
+                            <div class="product-code">NP-1010</div>
+                            <ul class="product-features">
+                                <li>5mm grid</li>
+                                <li>160 pages</li>
+                                <li>Lay-flat binding</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1510172951991-856a62a9e395?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Moleskine Style">
+                        </div>
+                        <div class="product-body p-3">
+                            <h4>Moleskine Style</h4>
+                            <div class="product-code">NP-1011</div>
+                            <ul class="product-features">
+                                <li>Premium paper</li>
+                                <li>Elastic closure</li>
+                                <li>Back pocket</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Legal Pad">
+                        </div>
+                        <div class="product-body p-3">
+                            <h4>Legal Pad</h4>
+                            <div class="product-code">NP-1012</div>
+                            <ul class="product-features">
+                                <li>Yellow paper</li>
+                                <li>50 sheets</li>
+                                <li>Perforated pages</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1621246163563-7a4f296f8a20?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Steno Pad">
+                        </div>
+                        <div class="product-body p-3">
+                            <h4>Steno Pad</h4>
+                            <div class="product-code">NP-1013</div>
+                            <ul class="product-features">
+                                <li>Shorthand ruling</li>
+                                <li>80 sheets</li>
+                                <li>Sturdy backing</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1568043210943-0e8aac4b9734?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Lab Notebook">
+                        </div>
+                        <div class="product-body p-3">
+                            <h4>Lab Notebook</h4>
+                            <div class="product-code">NP-1014</div>
+                            <ul class="product-features">
+                                <li>Numbered pages</li>
+                                <li>Grid format</li>
+                                <li>Carbonless duplicate</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Address Book">
+                        </div>
+                        <div class="product-body p-3">
+                            <h4>Address Book</h4>
+                            <div class="product-code">NP-1015</div>
+                            <ul class="product-features">
+                                <li>Alphabetical tabs</li>
+                                <li>200 entries</li>
+                                <li>Leather cover</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Recipe Book">
+                        </div>
+                        <div class="product-body p-3">
+                            <h4>Recipe Book</h4>
+                            <div class="product-code">NP-1016</div>
+                            <ul class="product-features">
+                                <li>Lined pages</li>
+                                <li>Tabbed sections</li>
+                                <li>Spill-resistant cover</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1510172951991-856a62a9e395?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Music Notebook">
+                        </div>
+                        <div class="product-body p-3">
+                            <h4>Music Notebook</h4>
+                            <div class="product-code">NP-1017</div>
+                            <ul class="product-features">
+                                <li>Staff paper</li>
+                                <li>100 pages</li>
+                                <li>Spiral bound</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1542038789716-6a4e7b6a2a0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Meeting Notebook">
+                        </div>
+                        <div class="product-body p-3">
+                            <h4>Meeting Notebook</h4>
+                            <div class="product-code">NP-1018</div>
+                            <ul class="product-features">
+                                <li>Dated pages</li>
+                                <li>Action item tracking</li>
+                                <li>Professional design</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1590856029826-c7a73142bbf1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Pocket Notebook">
+                        </div>
+                        <div class="product-body p-3">
+                            <h4>Pocket Notebook</h4>
+                            <div class="product-code">NP-1019</div>
+                            <ul class="product-features">
+                                <li>3.5" x 5.5"</li>
+                                <li>80 pages</li>
+                                <li>Elastic closure</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1476&q=80" alt="Calligraphy Notebook">
+                        </div>
+                        <div class="product-body p-3">
+                            <h4>Calligraphy Notebook</h4>
+                            <div class="product-code">NP-1020</div>
+                            <ul class="product-features">
+                                <li>Smooth paper</li>
+                                <li>Guideline sheets</li>
+                                <li>Lay-flat binding</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Sketch Pad">
+                        </div>
+                        <div class="product-body p-3">
+                            <h4>Sketch Pad</h4>
+                            <div class="product-code">NP-1021</div>
+                            <ul class="product-features">
+                                <li>Heavyweight paper</li>
+                                <li>50 sheets</li>
+                                <li>Spiral bound</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1621246163563-7a4f296f8a20?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Watercolor Notebook">
+                        </div>
+                        <div class="product-body p-3">
+                            <h4>Watercolor Notebook</h4>
+                            <div class="product-code">NP-1022</div>
+                            <ul class="product-features">
+                                <li>140lb paper</li>
+                                <li>Cold press texture</li>
+                                <li>30 sheets</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1568043210943-0e8aac4b9734?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Journal">
+                        </div>
+                        <div class="product-body p-3">
+                            <h4>Journal</h4>
+                            <div class="product-code">NP-1023</div>
+                            <ul class="product-features">
+                                <li>Lined pages</li>
+                                <li>Ribbon bookmark</li>
+                                <li>240 pages</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Planner">
+                        </div>
+                        <div class="product-body p-3">
+                            <h4>Planner</h4>
+                            <div class="product-code">NP-1024</div>
+                            <ul class="product-features">
+                                <li>Dated pages</li>
+                                <li>Monthly/weekly views</li>
+                                <li>Goal tracking</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1398&q=80" alt="Ledger Book">
+                        </div>
+                        <div class="product-body p-3">
+                            <h4>Ledger Book</h4>
+                            <div class="product-code">NP-1025</div>
+                            <ul class="product-features">
+                                <li>Columnar pages</li>
+                                <li>200 pages</li>
+                                <li>Durable binding</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -846,67 +1159,53 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact-section">
+    <section class="contact-section" id="contact">
         <div class="container">
-            <h2 class="section-title animate-on-scroll">Contact Us</h2>
+            <div class="section-title">
+                <h2>Contact Us</h2>
+            </div>
             <div class="row">
-                <div class="col-lg-5 mb-4 mb-lg-0">
-                    <div class="contact-info animate-on-scroll">
-                        <h3 class="contact-title">Get In Touch</h3>
+                <div class="col-lg-6 animate-on-scroll">                        
+                <div class="col-lg-6 animate-on-scroll">
+                    <div class="contact-info">
+                        <h3>Get in touch</h3>
+                        <p>Have questions about our products or need assistance with your order? Reach out to us through any of these channels.</p>
                         
-                        <div class="contact-item">
-                            <div class="contact-icon">
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
-                            <div class="contact-text">
-                                <h5>Our Location</h5>
-                                <p>Guruvayur 680101</p>
+                            <div>
+                                <h4>Address</h4>
+                                <p>123 Notebook Street, Stationery City, SC 12345</p>
                             </div>
                         </div>
                         
-                        <div class="contact-item">
-                            <div class="contact-icon">
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
                                 <i class="fas fa-phone-alt"></i>
                             </div>
-                            <div class="contact-text">
-                                <h5>Call Us</h5>
+                            <div>
+                                <h4>Phone</h4>
                                 <p>+91 95628 98601</p>
                             </div>
                         </div>
                         
-                        <div class="contact-item">
-                            <div class="contact-icon">
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
                                 <i class="fas fa-envelope"></i>
                             </div>
-                            <div class="contact-text">
-                                <h5>Email Us</h5>
-                                <p>nobinnixon63@gmail.com</p>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@notepro.com</p>
                             </div>
                         </div>
                         
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h5>Working Hours</h5>
-                                <p>Monday - Friday: 9AM - 6PM</p>
-                                <p>Saturday: 10AM - 4PM</p>
-                            </div>
+                        <div class="mt-4">
+                            <a href="https://wa.me/919562898601" class="whatsapp-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                            </a>
                         </div>
-                        
-                        <div class="social-links">
-                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-7">
-                    <div class="map-container animate-on-scroll">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215373510518!2d-73.98784492423938!3d40.75798597138952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1690834251980!5m2!1sen!2sus" width="100%" height="450" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
@@ -917,53 +1216,61 @@
     <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                    <h3 class="footer-title">Notebook Store</h3>
-                    <p>Providing premium quality school and office supplies since 2010. Your one-stop shop for all stationery needs.</p>
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <a href="#" class="footer-logo"><i class=""></i>Dean's Desk</a>
+                    <p>At Dean's Desk, we believe every student deserves quality notebooks without breaking the bank. Visit our store this month for amazing deals!</p>
+                    <div class="social-links mt-3">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
-                
-                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                    <h3 class="footer-title">Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#products">Products</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#products">Products</a></li>
+                            <li><a href="#features">Features</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
                 </div>
-                
-                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                    <h3 class="footer-title">Products</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Notebooks</a></li>
-                        <li><a href="#">Pens & Pencils</a></li>
-                        <li><a href="#">Brown Paper</a></li>
-                        <li><a href="#">Name Slips</a></li>
-                    </ul>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <div class="footer-links">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="#">Notebooks</a></li>
+                            <li><a href="#">Journals</a></li>
+                            <li><a href="#">Sketchbooks</a></li>
+                            <li><a href="#">Planners</a></li>
+                        </ul>
+                    </div>
                 </div>
-                
-                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                    <h3 class="footer-title">Customer Service</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Shipping Policy</a></li>
-                        <li><a href="#">Return Policy</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                    </ul>
+                <div class="col-lg-4 col-md-12">
+                    <div class="footer-links">
+                        <h4>Business Hours</h4>
+                        <ul>
+                            <li>Monday - Friday: 9am to 6pm</li>
+                            <li>Saturday: 10am to 4pm</li>
+                            <li>Sunday: Closed</li>
+                        </ul>
+                        <div class="mt-3">
+                            <a href="https://wa.me/919562898601" class="whatsapp-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i> WhatsApp Support
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-md-6 text-center text-md-start">
-                            <p class="copyright">© 2023 Notebook Store. All Rights Reserved.</p>
-                        </div>
-                        <div class="col-md-6 text-center text-md-end">
-                            <div class="payment-methods">
-                                
-                            </div>
-                        </div>
+            <div class="footer-bottom mt-5 pt-4 border-top border-secondary">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start">
+                        <p class="mb-0">&copy; 2024 Dean's Desk. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <p class="mb-0">Designed with <i class="fas fa-heart text-danger"></i> by Dean's Desk</p>
                     </div>
                 </div>
             </div>
@@ -971,69 +1278,133 @@
     </footer>
 
     <!-- Back to Top Button -->
-    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         // Back to Top Button
-        $(window).scroll(function() {
-            if ($(this).scrollTop() > 300) {
-                $('.back-to-top').addClass('active');
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('active');
             } else {
-                $('.back-to-top').removeClass('active');
+                backToTopButton.classList.remove('active');
             }
         });
         
-        $('.back-to-top').click(function(e) {
-            e.preventDefault();
-            $('html, body').animate({scrollTop: 0}, '300');
-        });
-        
-        // Animate on Scroll
-        $(document).ready(function() {
-            $(window).scroll(function() {
-                $('.animate-on-scroll').each(function() {
-                    var position = $(this).offset().top;
-                    var scroll = $(window).scrollTop();
-                    var windowHeight = $(window).height();
-                    var delay = $(this).data('delay') || 0;
-                    
-                    if (scroll + windowHeight > position + 100) {
-                        setTimeout(() => {
-                            $(this).addClass('animated');
-                        }, delay * 1000);
-                    }
-                });
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
             });
-            
-            // Trigger scroll event on page load
-            $(window).trigger('scroll');
-        });
-        
-        // Smooth scrolling for anchor links
-        $('a[href*="#"]').on('click', function(e) {
-            e.preventDefault();
-            
-            $('html, body').animate(
-                {
-                    scrollTop: $($(this).attr('href')).offset().top - 70,
-                },
-                500,
-                'linear'
-            );
         });
         
         // Navbar scroll effect
-        $(window).scroll(function() {
-            if ($(this).scrollTop() > 100) {
-                $('.navbar').addClass('navbar-scrolled');
+        const navbar = document.querySelector('.navbar');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 50) {
+                navbar.classList.add('scrolled');
             } else {
-                $('.navbar').removeClass('navbar-scrolled');
+                navbar.classList.remove('scrolled');
             }
         });
+        
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        const searchSuggestions = document.getElementById('searchSuggestions');
+        const allProducts = document.querySelectorAll('.product-card');
+        
+        // Sample product names for search suggestions
+        const productNames = [
+            "Classic Notebook", "Spiral Notebook", "Executive Notebook", "Artist Sketchbook", 
+            "Bullet Journal", "Student Notebook", "Premium Notebook", "Travel Journal", 
+            "Composition Book", "Graph Paper Notebook", "Moleskine Style", "Legal Pad", 
+            "Steno Pad", "Lab Notebook", "Address Book", "Recipe Book", "Music Notebook", 
+            "Meeting Notebook", "Pocket Notebook", "Calligraphy Notebook", "Sketch Pad", 
+            "Watercolor Notebook", "Journal", "Planner", "Ledger Book"
+        ];
+        
+        searchInput.addEventListener('input', () => {
+            const searchTerm = searchInput.value.toLowerCase();
+            searchSuggestions.innerHTML = '';
+            
+            if (searchTerm.length === 0) {
+                searchSuggestions.classList.remove('active');
+                // Show all products when search is empty
+                allProducts.forEach(product => {
+                    product.style.display = 'block';
+                });
+                return;
+            }
+            
+            searchSuggestions.classList.add('active');
+            
+            // Filter product names for suggestions
+            const filteredNames = productNames.filter(name => 
+                name.toLowerCase().includes(searchTerm)
+            );
+            
+            if (filteredNames.length > 0) {
+                filteredNames.forEach(name => {
+                    const suggestionItem = document.createElement('div');
+                    suggestionItem.classList.add('suggestion-item');
+                    suggestionItem.textContent = name;
+                    suggestionItem.addEventListener('click', () => {
+                        searchInput.value = name;
+                        searchSuggestions.classList.remove('active');
+                        filterProducts(name);
+                    });
+                    searchSuggestions.appendChild(suggestionItem);
+                });
+            } else {
+                const noResults = document.createElement('div');
+                noResults.classList.add('suggestion-item');
+                noResults.textContent = 'No results found';
+                searchSuggestions.appendChild(noResults);
+            }
+            
+            // Filter products based on search term
+            filterProducts(searchTerm);
+        });
+        
+        function filterProducts(searchTerm) {
+            allProducts.forEach(product => {
+                const productTitle = product.querySelector('h4').textContent.toLowerCase();
+                if (productTitle.includes(searchTerm.toLowerCase())) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
+        
+        // Close suggestions when clicking outside
+        document.addEventListener('click', (e) => {
+            if (e.target !== searchInput) {
+                searchSuggestions.classList.remove('active');
+            }
+        });
+        
+        // Animation on scroll
+        const animateElements = document.querySelectorAll('.animate-on-scroll');
+        
+        const animateOnScroll = () => {
+            animateElements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.classList.add('animated');
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
     </script>
 </body>
 </html>
