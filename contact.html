@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Premium Drink Company</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #f9a826;
+            --text: #00ff08;
+            --light-bg: #ffc800;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text);
+            overflow-x: hidden;
+            background-color: var(--primary);
+            line-height: 1.6;
+        }
+
+        /* Parallax Background */
+        .parallax-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1551029506-0807df4e2031?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2832&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            z-index: -2;
+            opacity: 0.15;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(26,26,46,0.9) 0%, rgba(22,33,62,0.95) 100%);
+            z-index: -1;
+        }
+
+        /* Navigation */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background-color: rgba(26, 26, 46, 0.95);
+            padding: 15px 5%;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .hamburger .line {
+            width: 30px;
+            height: 3px;
+            background: var(--text);
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active .line:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .hamburger.active .line:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active .line:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 120px auto 50px;
+            padding: 0 5%;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            background: linear-gradient(to right, var(--accent), #f9d423);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: rgba(230, 230, 230, 0.8);
+        }
+
+        /* Contact Form */
+        .contact-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+            opacity: 0;
+            transform: translateX(-30px);
+            animation: fadeInRight 1s ease 0.3s forwards;
+        }
+
+        .contact-info h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .info-icon {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+
+        .info-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .info-content p, .info-content a {
+            color: rgba(230, 230, 230, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .info-content a:hover {
+            color: var(--accent);
+        }
+
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.1);
+            opacity: 0;
+            transform: translateX(30px);
+            animation: fadeInLeft 1s ease 0.3s forwards;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            background: rgba(255, 0, 0, 0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
+            color: var(--text);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: rgba(255,255,255,0.15);
+            box-shadow: 0 0 0 3px rgba(249, 168, 38, 0.2);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .required-field::after {
+            content: '*';
+            color: var(--accent);
+            margin-left: 4px;
+        }
+
+        .submit-btn {
+            background: var(--accent);
+            color: var(--primary);
+            border: none;
+            padding: 15px 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .submit-btn:hover {
+            background: #f9b826;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(249, 168, 38, 0.3);
+        }
+
+        .submit-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .submit-btn.loading {
+            position: relative;
+            pointer-events: none;
+        }
+
+        .submit-btn.loading::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            border: 3px solid transparent;
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 1s ease infinite;
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            background: rgba(40, 167, 69, 0.2);
+            border: 1px solid rgba(40, 167, 69, 0.3);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .success-message h3 {
+            color: #28a745;
+            margin-bottom: 10px;
+        }
+
+        .success-message p {
+            color: rgba(230, 230, 230, 0.8);
+        }
+
+        /* Drink Selection */
+        .drink-selection {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .drink-option {
+            position: relative;
+        }
+
+        .drink-option input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .drink-label {
+            display: block;
+            padding: 15px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .drink-option input:checked + .drink-label {
+            background: rgba(249, 168, 38, 0.2);
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .drink-option:hover .drink-label {
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 5%;
+            background: rgba(0,0,0,0.2);
+            margin-top: 80px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .social-links a {
+            color: var(--text);
+            font-size: 1.2rem;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+        }
+
+        .copyright {
+            color: rgba(230, 230, 230, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .navbar {
+                padding: 20px 5%;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 400px;
+                height: 100vh;
+                background: var(--secondary);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: right 0.5s ease;
+                z-index: 1000;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links li {
+                margin: 20px 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .header h1 {
+                font-size: 2.2rem;
+            }
+
+            .contact-section {
+                flex-direction: column;
+            }
+
+            .contact-info, .contact-form {
+                min-width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                margin-top: 100px;
+            }
+
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .contact-form {
+                padding: 30px 20px;
+            }
+
+            .drink-selection {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Parallax Background -->
+    <div class="parallax-bg"></div>
+    <div class="overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="#" class="logo">ELIXIR</a>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="header">
+            <h1>Contact Our Connoisseurs</h1>
+            <p>Have questions about our premium beverages? Our experts are ready to guide you through our exquisite collection and answer all your inquiries.</p>
+        </div>
+
+        <div class="contact-section">
+            <div class="contact-info">
+                <h2>Connect With Us</h2>
+                
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Headquarters</h3>
+                        <p>123 Distillery Lane<br>Beverage Valley, BV 12345</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Phone</h3>
+                        <p><a href="tel:+11234567890">+1 (123) 456-7890</a></p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Email</h3>
+                        <p><a href="mailto:info@elixir.com">info@elixir.com</a></p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Business Hours</h3>
+                        <p>Monday - Friday: 9AM - 6PM<br>Saturday: 10AM - 4PM</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form id="drinkContactForm" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="07afb383-6d65-49e7-b595-1aeb1dc433ee">
+                    <input type="hidden" name="subject" value="New Inquiry from Elixir Website">
+                    <input type="checkbox" name="botcheck" class="hidden">
+
+                    <div class="form-group">
+                        <label for="name" class="required-field">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="required-field">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone" class="required-field">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="company">Company Name</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="required-field">Interested In</label>
+                        <div class="drink-selection">
+                            <div class="drink-option">
+                                <input type="checkbox" id="whiskey" name="interest[]" value="Whiskey">
+                                <label for="whiskey" class="drink-label">Milkshake</label>
+                            </div>
+                            <div class="drink-option">
+                                <input type="checkbox" id="vodka" name="interest[]" value="Vodka">
+                                <label for="vodka" class="drink-label">Energy Drink</label>
+                            </div>
+                            <div class="drink-option">
+                                <input type="checkbox" id="gin" name="interest[]" value="Gin">
+                                <label for="gin" class="drink-label">Sharjah Shake</label>
+                            </div>
+                            <div class="drink-option">
+                                <input type="checkbox" id="rum" name="interest[]" value="Rum">
+                                <label for="rum" class="drink-label">Fizz Drinks</label>
+                            </div>
+                            <div class="drink-option">
+                                <input type="checkbox" id="tequila" name="interest[]" value="Tequila">
+                                <label for="tequila" class="drink-label">Coconut Drink</label>
+                            </div>
+                            <div class="drink-option">
+                                <input type="checkbox" id="wine" name="interest[]" value="Wine">
+                                <label for="wine" class="drink-label">Juice</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inquiry-type" class="required-field">Inquiry Type</label>
+                        <select id="inquiry-type" name="inquiry_type" required>
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="product">Product Information</option>
+                            <option value="distribution">Distribution Inquiry</option>
+                            <option value="partnership">Partnership Opportunity</option>
+                            <option value="event">Event Planning</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="required-field">Your Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="submitBtn">Send Inquiry</button>
+                </form>
+
+                <div id="successMessage" class="success-message">
+                    <h3>Thank You for Your Inquiry!</h3>
+                    <p>Our beverage experts will review your message and respond within 24 hours. Cheers!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p class="copyright">© 2023 Elixir Premium Beverages. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Navigation
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            hamburger.addEventListener('click', function() {
+                this.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+
+            // Navbar scroll effect
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+
+            // Form submission
+            const form = document.getElementById('drinkContactForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const successMessage = document.getElementById('successMessage');
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Show loading state
+                submitBtn.classList.add('loading');
+                submitBtn.disabled = true;
+                
+                // Get form data
+                const formData = new FormData(form);
+                
+                // Submit form using Fetch API
+                fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Hide form and show success message
+                        form.style.display = 'none';
+                        successMessage.style.display = 'block';
+                        
+                        // Reset form
+                        form.reset();
+                    } else {
+                        alert('There was an error submitting your form. Please try again.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('There was an error submitting your form. Please try again.');
+                })
+                .finally(() => {
+                    submitBtn.classList.remove('loading');
+                    submitBtn.disabled = false;
+                });
+            });
+
+            // Animate elements when they come into view
+            const animateOnScroll = function() {
+                const elements = document.querySelectorAll('.header, .contact-info, .contact-form');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementPosition < windowHeight - 100) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translate(0)';
+                    }
+                });
+            };
+
+            // Initial check
+            animateOnScroll();
+
+            // Check on scroll
+            window.addEventListener('scroll', animateOnScroll);
+        });
+    </script>
+</body>
+</html>
