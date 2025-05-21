@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MYSTIC BERRY</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1 class="title animate-pop-in">CODE MESSAGE SYSTEM FOR MYSTIC BERRY</h1>
+            <p class="subtitle animate-pop-in">Advanced encrypted message system developed by Edward</p>
+        </div>
+        <div class="scroll-indicator animate-bounce">
+            <span></span>
+        </div>
+    </header>
+
+    <main>
+        <section class="converter-section fade-in">
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="text-to-morse">Text to Morse</button>
+                <button class="tab-btn" data-tab="morse-to-text">Morse to Text</button>
+                
+            </div>
+
+            <div class="tab-content active" id="text-to-morse">
+                <div class="input-group">
+                    <label for="text-input">Enter your message:</label>
+                    <textarea id="text-input" placeholder="Type your message here..."></textarea>
+                </div>
+                <button id="convert-to-morse" class="action-btn">Convert to Morse</button>
+                <div class="result-group">
+                    <label for="morse-output">Morse code:</label>
+                    <textarea id="morse-output" readonly></textarea>
+                    <button id="play-morse" class="action-btn secondary">Play Sound</button>
+                    <button id="copy-morse" class="action-btn secondary">Copy Morse</button>
+                </div>
+            </div>
+
+            <div class="tab-content" id="morse-to-text">
+                <div class="input-group">
+                    <label for="morse-input">Enter Morse code:</label>
+                    <textarea id="morse-input" placeholder="Enter Morse code with spaces between letters and / between words"></textarea>
+                </div>
+                <button id="convert-to-text" class="action-btn">Convert to Text</button>
+                <div class="result-group">
+                    <label for="text-output">Decoded message:</label>
+                    <textarea id="text-output" readonly></textarea>
+                    <button id="copy-text" class="action-btn secondary">Copy Text</button>
+                </div>
+            </div>
+
+            <div class="tab-content" id="encrypt">
+                <div class="input-group">
+                    <label for="plain-text">Message to encrypt:</label>
+                    <textarea id="plain-text" placeholder="Enter secret message"></textarea>
+                </div>
+                <div class="input-group">
+                    <label for="encryption-key">Encryption key:</label>
+                    <input type="password" id="encryption-key" placeholder="Enter encryption key">
+                </div>
+                <button id="encrypt-btn" class="action-btn">Encrypt & Convert to Morse</button>
+                <div class="result-group">
+                    <label for="encrypted-output">Encrypted Morse code:</label>
+                    <textarea id="encrypted-output" readonly></textarea>
+                    <button id="copy-encrypted" class="action-btn secondary">Copy Encrypted</button>
+                </div>
+            </div>
+
+            <div class="tab-content" id="decrypt">
+                <div class="input-group">
+                    <label for="encrypted-morse">Encrypted Morse code:</label>
+                    <textarea id="encrypted-morse" placeholder="Enter encrypted Morse code"></textarea>
+                </div>
+                <div class="input-group">
+                    <label for="decryption-key">Decryption key:</label>
+                    <input type="password" id="decryption-key" placeholder="Enter decryption key">
+                </div>
+                <button id="decrypt-btn" class="action-btn">Decrypt Message</button>
+                <div class="result-group">
+                    <label for="decrypted-output">Decrypted message:</label>
+                    <textarea id="decrypted-output" readonly></textarea>
+                    <button id="copy-decrypted" class="action-btn secondary">Copy Decrypted</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="info-section slide-up">
+            
+            </div>
+        </section>
+
+        <section class="morse-chart slide-up">
+            
+        </section>
+    </main>
+
+    <footer class="footer fade-in">
+        <p> &copy; </p>
+        <p class="morse-message">... . -.-. ..- .-. . / -.-. --- -- -- ..- -. .. -.-. .- - .. --- -.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
