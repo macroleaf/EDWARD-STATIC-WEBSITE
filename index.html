@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BootUp Type</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Blue Light Filter Overlay -->
+    <div id="blueLightFilter" class="blue-light-filter hidden"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-keyboard"></i>
+                <span>BootUp Type</span>
+            </div>
+            <div class="nav-links">
+                <a href="#" class="nav-link active" data-section="home"><i class="fas fa-home"></i> Home</a>
+                <a href="#" class="nav-link" data-section="practice"><i class="fas fa-keyboard"></i> Practice</a>
+                <a href="#" class="nav-link" data-section="results"><i class="fas fa-chart-line"></i> Results</a>
+                <a href="#" class="nav-link" data-section="about"><i class="fas fa-info-circle"></i> About</a>
+            </div>
+            <div class="nav-controls">
+                <button id="soundToggle" class="nav-control" title="Toggle Sound">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+                <button id="themeToggle" class="nav-control" title="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="blueLightToggle" class="nav-control" title="Blue Light Filter">
+                    <i class="fas fa-eye"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- Home Section -->
+        <section id="home" class="content-section active">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1 class="hero-title">Boost Your Typing Speed .- -. .- --. .... .-</h1>
+                    <p class="hero-subtitle">Welcome! Get ready to boost your skills with our timed tests and track your progress effortlessly. Start practicing today and see how far you can go!</p>
+                    <button class="hero-btn start-practice">Start Practicing</button>
+                </div>
+                <div class="hero-image">
+                    <div class="keyboard-animation">
+                        <div class="keyboard">
+                            <div class="key-row">
+                                <div class="key">Q</div>
+                                <div class="key">W</div>
+                                <div class="key">E</div>
+                                <div class="key">R</div>
+                                <div class="key">T</div>
+                                <div class="key">Y</div>
+                                <div class="key">U</div>
+                                <div class="key">I</div>
+                                <div class="key">O</div>
+                                <div class="key">P</div>
+                            </div>
+                            <div class="key-row">
+                                <div class="key">A</div>
+                                <div class="key">S</div>
+                                <div class="key">D</div>
+                                <div class="key">F</div>
+                                <div class="key">G</div>
+                                <div class="key">H</div>
+                                <div class="key">J</div>
+                                <div class="key">K</div>
+                                <div class="key">L</div>
+                            </div>
+                            <div class="key-row">
+                                <div class="key wide">Shift</div>
+                                <div class="key">Z</div>
+                                <div class="key">X</div>
+                                <div class="key">C</div>
+                                <div class="key">V</div>
+                                <div class="key">B</div>
+                                <div class="key">N</div>
+                                <div class="key">M</div>
+                                <div class="key wide">Shift</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-stopwatch"></i>
+                    </div>
+                    <h3>Timed Tests</h3>
+                    <p>Improve your speed with 1, 2, and 3 minute typing challenges.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Page Tests</h3>
+                    <p>Practice with full page content to build endurance and accuracy.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-edit"></i>
+                    </div>
+                    <h3>Custom Texts</h3>
+                    <p>Paste your own content and practice with material that matters to you.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Practice Section -->
+        <section id="practice" class="content-section">
+            <div class="test-selection">
+                <h2 class="section-title">Select Test Type</h2>
+                <div class="test-options">
+                    <div class="test-category">
+                        <h3><i class="fas fa-stopwatch"></i> Timed Tests</h3>
+                        <button class="test-btn" data-time="60">
+                            <i class="fas fa-clock"></i> 1 Minute Test
+                        </button>
+                        <button class="test-btn" data-time="120">
+                            <i class="fas fa-clock"></i> 2 Minute Test
+                        </button>
+                        <button class="test-btn" data-time="180">
+                            <i class="fas fa-clock"></i> 3 Minute Test
+                        </button>
+                    </div>
+                    <div class="test-category">
+                        <h3><i class="fas fa-file-alt"></i> Page Tests</h3>
+                        <button class="test-btn" data-pages="1">
+                            <i class="fas fa-file"></i> 1 Page Test
+                        </button>
+                        <button class="test-btn" data-pages="2">
+                            <i class="fas fa-file"></i> 2 Page Test
+                        </button>
+                        <button class="test-btn" data-pages="3">
+                            <i class="fas fa-file"></i> 3 Page Test
+                        </button>
+                    </div>
+                    <div class="test-category">
+                        <h3><i class="fas fa-edit"></i> Custom Test</h3>
+                        <textarea id="customText" placeholder="Paste your own text here..."></textarea>
+                        <button id="startCustomTest" class="test-btn">
+                            <i class="fas fa-play"></i> Start Custom Test
+                        </button>
+                        <div id="estimatedTime" class="estimate">
+                            <i class="fas fa-hourglass-half"></i> Estimated time: --
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="typing-container hidden">
+                <div class="typing-header">
+                    <div class="timer">
+                        <i class="fas fa-clock"></i>
+                        <span id="timeDisplay">01:00</span>
+                    </div>
+                    <div class="stats">
+                        <div class="stat">
+                            <span class="label"><i class="fas fa-tachometer-alt"></i> WPM</span>
+                            <span id="wpmDisplay" class="value">0</span>
+                        </div>
+                        <div class="stat">
+                            <span class="label"><i class="fas fa-bullseye"></i> Accuracy</span>
+                            <span id="accuracyDisplay" class="value">0%</span>
+                        </div>
+                        <div class="stat">
+                            <span class="label"><i class="fas fa-font"></i> Chars</span>
+                            <span id="charsDisplay" class="value">0/0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-display" id="textDisplay">
+                    <!-- Text to type will appear here -->
+                </div>
+
+                <textarea class="text-input" id="textInput" placeholder="Start typing here..."></textarea>
+
+                <div class="progress-container">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+
+                <div class="typing-controls">
+                    <button id="restartTest" class="btn restart-btn">
+                        <i class="fas fa-redo"></i> Restart Test
+                    </button>
+                    <button id="backToTests" class="btn back-btn">
+                        <i class="fas fa-arrow-left"></i> Back to Tests
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section id="results" class="content-section">
+            <div class="results-container">
+                <h2 class="section-title">Your Typing Results</h2>
+                <div class="results-placeholder">
+                    <i class="fas fa-chart-pie"></i>
+                    <p>Complete a test to see your results here</p>
+                </div>
+                <div class="results-content hidden">
+                    <div class="result-stats">
+                        <div class="result-stat">
+                            <span class="label">Speed</span>
+                            <span id="finalWPM" class="value big">0</span>
+                            <span class="unit">WPM</span>
+                        </div>
+                        <div class="result-stat">
+                            <span class="label">Accuracy</span>
+                            <span id="finalAccuracy" class="value big">0%</span>
+                        </div>
+                        <div class="result-stat">
+                            <span class="label">Time</span>
+                            <span id="finalTime" class="value">0:00</span>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <canvas id="speedChart"></canvas>
+                    </div>
+
+                    <div class="result-actions">
+                        <button id="newTest" class="btn primary-btn">
+                            <i class="fas fa-keyboard"></i> New Test
+                        </button>
+                        <button id="printCert" class="btn">
+                            <i class="fas fa-print"></i> Print Certificate
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="content-section">
+            <div class="about-container">
+                <h2 class="section-title">About SpeedType</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>SpeedType is a free typing practice tool designed to help you improve your typing speed and accuracy through timed tests and custom exercises.</p>
+                        <p>Whether you're a beginner looking to learn touch typing or an experienced typist aiming to break speed records, SpeedType provides the tools you need to track your progress and achieve your goals.</p>
+                        <div class="about-features">
+                            <h3><i class="fas fa-star"></i> Features</h3>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Multiple test types (timed and page-based)</li>
+                                <li><i class="fas fa-check"></i> Custom text practice</li>
+                                <li><i class="fas fa-check"></i> Detailed performance analytics</li>
+                                <li><i class="fas fa-check"></i> Dark mode and blue light filter</li>
+                                <li><i class="fas fa-check"></i> Printable certificates</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <div class="typing-animation">
+                            <div class="hands">
+                                <div class="hand left">
+                                    <div class="finger f1"></div>
+                                    <div class="finger f2"></div>
+                                    <div class="finger f3"></div>
+                                    <div class="finger f4"></div>
+                                </div>
+                                <div class="hand right">
+                                    <div class="finger f1"></div>
+                                    <div class="finger f2"></div>
+                                    <div class="finger f3"></div>
+                                    <div class="finger f4"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <i class="fas fa-keyboard"></i>
+                <span>BootUp Type</span>
+            </div>
+            <div class="footer-links">
+                <a href="#" class="footer-link" data-section="home">Home</a>
+                <a href="#" class="footer-link" data-section="practice">Practice</a>
+                <a href="#" class="footer-link" data-section="results">Results</a>
+                <a href="#" class="footer-link" data-section="about">About</a>
+            </div>
+            <div class="footer-social">
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p> BootUp Type
+© 2025</p>
+        </div>
+    </footer>
+
+    <!-- Confetti Container -->
+    <div class="confetti-container hidden" id="confettiContainer"></div>
+
+    <!-- Audio Elements -->
+    <audio id="keySound" src="https://assets.mixkit.co/sfx/preview/mixkit-quick-jump-arcade-game-239.mp3" preload="auto"></audio>
+    <audio id="keySound2" src="https://assets.mixkit.co/sfx/preview/mixkit-arcade-game-jump-coin-216.mp3" preload="auto"></audio>
+    <audio id="keySound3" src="https://assets.mixkit.co/sfx/preview/mixkit-unlock-game-notification-253.mp3" preload="auto"></audio>
+    <audio id="completeSound" src="https://assets.mixkit.co/sfx/preview/mixkit-achievement-bell-600.mp3" preload="auto"></audio>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
